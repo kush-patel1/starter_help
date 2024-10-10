@@ -33,7 +33,7 @@ function App() {
         <h1> Kush Patel</h1>
         <h1> Matthew Goldstein</h1>
         <h1> Kevin Lundin</h1>
-        <ProgressBar progress = {50}></ProgressBar>
+        <ProgressBar progress = {62} />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
