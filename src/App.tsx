@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
+import { Results } from './Results Page/Results';
+import { ProgressBar } from './Progress Bar/ProgressBar';
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -24,14 +26,14 @@ function App() {
   function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
     setKey(event.target.value);
   }
-  return (
-    <div className="App">
+  return <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1> Ethan Fassnacht </h1>
         <h1> Kush Patel</h1>
         <h1> Matthew Goldstein</h1>
         <h1> Kevin Lundin</h1>
+        <ProgressBar progress = {62} />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
@@ -50,8 +52,7 @@ function App() {
         <br></br>
         <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
       </Form>
-    </div>
-  );
+    </div>;
 }
 
 export default App;
