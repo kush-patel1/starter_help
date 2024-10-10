@@ -7,7 +7,7 @@ export function Results(){
     <div className="Results">
        <header className="Results-header">
          <h1> Kush Patel</h1>
-         <h1> Matthew Goldstein<ProgressBar></ProgressBar></h1>
+         <h1> Matthew Goldstein</h1>
          <p>
            Edit <code>src/Results.tsx</code> and save to reload.
          </p>
