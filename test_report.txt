@@ -5,20 +5,25 @@
 PASS src/App.test.tsx
   ✓ renders learn react link (39 ms)
 
---------------------|---------|----------|---------|---------|-------------------
-File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
---------------------|---------|----------|---------|---------|-------------------
-All files           |   26.08 |    16.66 |   14.28 |   26.08 |                   
- App.tsx            |      60 |       50 |   33.33 |      60 | 11,19-25          
- basicQuestions.tsx |       0 |      100 |       0 |       0 | 4                 
- detailedPage.tsx   |       0 |      100 |       0 |       0 | 7                 
- index.tsx          |       0 |      100 |     100 |       0 | 7-19              
- reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10              
---------------------|---------|----------|---------|---------|-------------------
+---------------------|---------|----------|---------|---------|-------------------
+File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+---------------------|---------|----------|---------|---------|-------------------
+All files            |      28 |    16.66 |   22.22 |      28 |                   
+ src                 |   26.08 |    16.66 |   14.28 |   26.08 |                   
+  App.tsx            |      60 |       50 |   33.33 |      60 | 13,21-27          
+  basicQuestions.tsx |       0 |      100 |       0 |       0 | 4                 
+  detailedPage.tsx   |       0 |      100 |       0 |       0 | 7                 
+  index.tsx          |       0 |      100 |     100 |       0 | 7-19              
+  reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10              
+ src/Progress Bar    |     100 |      100 |     100 |     100 |                   
+  ProgressBar.tsx    |     100 |      100 |     100 |     100 |                   
+ src/Results Page    |       0 |      100 |       0 |       0 |                   
+  Results.tsx        |       0 |      100 |       0 |       0 | 6                 
+---------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 passed, 1 total
 Tests:       1 passed, 1 total
 Snapshots:   0 total
-Time:        2.92 s
+Time:        2.847 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
