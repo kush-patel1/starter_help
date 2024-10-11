@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
-import { Results } from './Results Page/Results';
+//import { Results } from './Results Page/Results';
 import { ProgressBar } from './Progress Bar/ProgressBar';
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)

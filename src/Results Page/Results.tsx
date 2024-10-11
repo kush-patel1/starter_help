@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Button, Form } from 'react-bootstrap';
-import { ProgressBar } from '../Progress Bar/ProgressBar';
+//import React, { useState } from 'react';
+//import { Button, Form } from 'react-bootstrap';
+//import { ProgressBar } from '../Progress Bar/ProgressBar';
 
 export function Results(){
     return(
