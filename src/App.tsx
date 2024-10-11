@@ -4,6 +4,7 @@ import './App.css';
 import { Button, Form } from 'react-bootstrap';
 //import { Results } from './Results Page/Results';
 import { ProgressBar } from './Progress Bar/ProgressBar';
+import BasicQuestions from './Basic Questions/BasicQuestions';
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -46,6 +47,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <BasicQuestions></BasicQuestions>
       <Form>
         <Form.Label>API Key:</Form.Label>
         <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
