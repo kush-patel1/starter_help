@@ -51,7 +51,7 @@ function App() {
           position: "fixed",
           width: "100%"
         }}> 
-          <img src={LogoImage} alt="a logo image" style={{width: "75px", height: "auto"}}></img>
+          <img src={LogoImage} alt="Company logo" style={{width: "75px", height: "auto"}} />
           <h1 style={{ flex: 1, textAlign: "center", marginRight: "20px"}}>Home Page</h1>
           <button style={{ borderRadius: "5px" }}>Log In</button>
         </div>
@@ -66,7 +66,7 @@ function App() {
           <p>A thorough evaluation offering personalized career recommendations based on skills, interests, and values</p>
         </div>
         <div  style={{textAlign: "center", bottom: "225px", left: "0px", position: "fixed", width: "50%"}}>
-          <img src={TestingImage} alt="a testing image" style={{width: "200px", height: "auto"}}></img>
+          <img src={TestingImage} alt="Testing example" style={{width: "200px", height: "auto"}} />
         </div>
         <div style={{textAlign: "center", bottom: "215px", left: "485px", position: "fixed", width: "50%"}}>
           <h3>This is a header to explain whats going on down below</h3>
