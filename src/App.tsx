@@ -17,7 +17,7 @@ if (prevKey !== null) {
 
 function App() {
   //const [key, setKey] = useState<string>(keyData); //for api key input
-  //const [pageVal, setPageVal] = useState<number>(0);
+  const [pageVal, setPageVal] = useState<number>(0);
 
   //sets the local storage item to the api key the user inputed
   /*function handleSubmit() {
