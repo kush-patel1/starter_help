@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
+//import { Results } from './Results Page/Results';
+import { ProgressBar } from './Progress Bar/ProgressBar';
 import TestingImage from "./dudetesting.webp";
 import LogoImage from "./reactlogo.png";
-
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -99,7 +100,6 @@ function App() {
       </div>
     )
   }
-
 }
 
 export default App;
