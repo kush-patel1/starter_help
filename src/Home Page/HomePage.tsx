@@ -2,12 +2,10 @@ import TestingImage from "./dudetesting.webp";
 import LogoImage from "./reactlogo.png";
 
 interface QuestionProps {
-    // The type is "a function that consumes nothing and returns nothing"
-    detailedClick: () => void;
-    basicClick: () => void;
+    basicQuestions: () => void;
+    detailedQuestions: () => void;
   }
-
-function HomePage({basicClick}: QuestionProps,{detailedClick}: QuestionProps){
+function HomePage({basicQuestions,detailedQuestions}:QuestionProps){
     return <div className="App">
         <div style={{
           backgroundColor: "green", 
@@ -25,12 +23,12 @@ function HomePage({basicClick}: QuestionProps,{detailedClick}: QuestionProps){
         </div>
         <div style={{wordWrap: "break-word", width: "500px", position: "relative",top:'15%', left: "10%", bottom: "60%", padding: "20px", float: "left", display: "inline-block", backgroundColor: "yellow", border: "2px solid black", borderRadius: "15px"}}>
           <h4 style={{marginBottom: "20px"}}>Basic Questions</h4>
-          <button style={{borderRadius: "5px", marginBottom: "20px"}} onClick={basicClick}>BASIC</button>
+          <button style={{borderRadius: "5px", marginBottom: "20px"}} onClick={basicQuestions}>BASIC</button>
           <p>A brief overview providing broad career suggestions based on key interests on a surface level</p>
         </div>
         <div style={{wordWrap: "break-word", width: "500px", position: "fixed", bottom: "500px", right: "220px", padding: "20px", float: "right", display: "inline-block", backgroundColor: "orange", border: "2px solid black", borderRadius: "15px"}}>
           <h4 style={{marginBottom: "20px"}}>Detailed Questions</h4>
-          <button style={{borderRadius: "5px", marginBottom: "20px"}} onClick={detailedClick}>DETAILED</button>
+          <button style={{borderRadius: "5px", marginBottom: "20px"}} onClick={detailedQuestions}>DETAILED</button>
           <p>A thorough evaluation offering personalized career recommendations based on skills, interests, and values</p>
         </div>
         <div  style={{textAlign: "center", bottom: "225px", left: "0px", position: "fixed", width: "50%"}}>

@@ -5,7 +5,7 @@ import './App.css';
 //import { Results } from './Results Page/Results';
 //import { ProgressBar } from './Progress Bar/ProgressBar';
 import BasicQuestions from './Question Pages/basicQuestions';
-import DetailedQuestions from './Question Pages/detailedPage';
+import DetailedQuestions from './Question Pages/detailedQuestions';
 import HomePage from './Home Page/HomePage';
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
@@ -41,7 +41,7 @@ function App() {
   
   if (pageVal === 0){
     return (
-      <HomePage basicClick={basicClick} detailedClick={detailedClick}></HomePage>
+      <div><HomePage basicQuestions={basicClick} detailedQuestions={detailedClick}></HomePage>{pageVal}</div>
     );
   } else if (pageVal === 1){
   return <BasicQuestions></BasicQuestions>;
