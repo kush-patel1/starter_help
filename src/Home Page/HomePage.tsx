@@ -1,5 +1,6 @@
 import TestingImage from "./dudetesting.webp";
 import LogoImage from "./reactlogo.png";
+import './HomePage.css';
 
 interface QuestionProps {
     basicQuestions: () => void;
@@ -7,26 +8,17 @@ interface QuestionProps {
   }
 function HomePage({basicQuestions,detailedQuestions}:QuestionProps){
     return <div className="App">
-        <div style={{
-          backgroundColor: "green", 
-          border: "3px solid black", 
-          display: "flex", 
-          justifyContent: "space-between", 
-          alignItems: "center", 
-          padding: "15px",
-          position: "fixed",
-          width: "100%"
-        }}> 
+        <div className="homeHeader"> 
           <img src={LogoImage} alt="a logo image" style={{width: "75px", height: "auto"}}></img>
           <h1 style={{ flex: 1, textAlign: "center", marginRight: "20px"}}>Home Page</h1>
           <button style={{ borderRadius: "5px" }}>Log In</button>
         </div>
-        <div style={{wordWrap: "break-word", width: "500px", position: "relative",top:'15%', left: "10%", bottom: "60%", padding: "20px", float: "left", display: "inline-block", backgroundColor: "yellow", border: "2px solid black", borderRadius: "15px"}}>
+        <div className="basicQuestions">
           <h4 style={{marginBottom: "20px"}}>Basic Questions</h4>
           <button style={{borderRadius: "5px", marginBottom: "20px"}} onClick={basicQuestions}>BASIC</button>
           <p>A brief overview providing broad career suggestions based on key interests on a surface level</p>
         </div>
-        <div style={{wordWrap: "break-word", width: "500px", position: "fixed", bottom: "500px", right: "220px", padding: "20px", float: "right", display: "inline-block", backgroundColor: "orange", border: "2px solid black", borderRadius: "15px"}}>
+        <div className="detailedQuestions">
           <h4 style={{marginBottom: "20px"}}>Detailed Questions</h4>
           <button style={{borderRadius: "5px", marginBottom: "20px"}} onClick={detailedQuestions}>DETAILED</button>
           <p>A thorough evaluation offering personalized career recommendations based on skills, interests, and values</p>
@@ -38,7 +30,7 @@ function HomePage({basicQuestions,detailedQuestions}:QuestionProps){
           <h3>This is a header to explain whats going on down below</h3>
           <p>sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text </p>
         </div>
-        <div style={{border: "3px solid black", padding: "15px", backgroundColor: "green", textAlign: "center", bottom: "0", left: "0", position: "fixed", width: "100%"}}>
+        <div className="footer">
           <h4>Footer</h4>
         </div>
         {

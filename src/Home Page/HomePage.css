@@ -1,0 +1,66 @@
+.homeHeader{
+    background-color: green;
+    border: 3px;
+    border-color:black;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    height: auto;
+}
+.homeHeaderText{
+    display: flex;
+    text-align: center;
+}
+
+.basicQuestions{
+    word-wrap: break-word;
+    width: 500px;
+    position: relative;
+    top: 15%;
+    left: 10%;
+    bottom: 60%;
+    padding: 20px;
+    float: left;
+    display: inline-block;
+    background-color: yellow;
+    border: 2px solid black;
+    border-radius: 15px;
+}
+
+/* style={{wordWrap: "break-word", width: "500px", position: "relative",top:'15%', left: "10%", 
+bottom: "60%", padding: "20px", float: "left", display: "inline-block", backgroundColor: "yellow",
+border: "2px solid black", borderRadius: "15px"}} */
+
+.detailedQuestions{
+    word-wrap: break-word;
+    width: 500px;
+    position: relative;
+    top: 15%;
+    right: 10%;
+    padding: 20px;
+    float: right;
+    display: inline-block;
+    background-color: orange;
+    border: 2px solid black;
+    border-radius: 15px;
+}
+
+/* style={{wordWrap: "break-word", width: "500px", position: "fixed", bottom: "500px", right: "220px", padding: "20px",
+float: "right", display: "inline-block", backgroundColor: "orange", border: "2px solid black", borderRadius: "15px"}} */
+
+.footer{
+    border: 3px solid black;
+    padding: 15px;
+    background-color: green;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    position:fixed;
+    width:100%;
+}
+
+/*style={{border: "3px solid black", padding: "15px", backgroundColor: "green", textAlign: "center", bottom: "0", left: "0", 
+position: "fixed", width: "100%"}}*/
