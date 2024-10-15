@@ -1,30 +1,57 @@
 .DetailedQuestions {
     text-align: left;
     padding: 10px;
+    scrollbar-color: white;
   }
   
   .DetailedQuestions-header {
-    background-color: #00d0ff;
+    background-color: #b6e7ff;
     min-height: 10vh;
-    text-align:center;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    font-family:'Courier New', Courier, monospace;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: rgb(0, 0, 0);
     position: fixed;
     width: 100%;
+    padding: 0 1in;
+  }
+  .DetailedQuestions-header h1 {
+    font-weight:600;
+    margin-right: 20px;
   }
   .DetailedQuestions-body{
     background-color: #fcf4ea;
     max-height: 1000vh;
-    align-items: center;
+    align-items: flex-start;
     justify-content:center;
-    font-family:'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: calc(5px + 2vmin);
     color: rgb(65, 65, 65);
     padding: 1in;
+  }
+
+  .DetailedQuestions-textArea {
+    width: 1000px;
+    height: 100px; 
+    padding: 10px;
+    font-size: 16px;
+    resize: vertical;
+    box-sizing: border-box; 
+    overflow-y:auto;
+    line-height: 1.5;
+    vertical-align: top;
+  }
+
+  .DetailedQuestions-getAnswersButton{
+    align-self: flex-end;
+    margin-top: 20px;
+    width: 180px;
+    height: 70px;
+    font-size: 20px;
   }
 
   .DetailedQuestions-footer {
@@ -35,7 +62,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family:'Courier New', Courier, monospace;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: rgb(255, 255, 255);
   }
   
