@@ -3,7 +3,7 @@
 > react-scripts test --coverage
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (45 ms)
+  ✕ renders learn react link (46 ms)
 
   ● renders learn react link
 
@@ -119,11 +119,11 @@ FAIL src/App.test.tsx
 ------------------------|---------|----------|---------|---------|-------------------
 File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ------------------------|---------|----------|---------|---------|-------------------
-All files               |   13.04 |     12.5 |   11.11 |   13.04 |                   
- src                    |   14.28 |     12.5 |   14.28 |   14.28 |                   
-  App.tsx               |    37.5 |       25 |   33.33 |    37.5 | 34-38,90-97       
+All files               |    6.97 |       10 |    5.26 |    7.14 |                   
+ src                    |    7.31 |       10 |    5.88 |     7.5 |                   
+  App.tsx               |    37.5 |       25 |   33.33 |    37.5 | 36-40,92-97       
   basicQuestions.tsx    |       0 |      100 |       0 |       0 | 4                 
-  detailedQuestions.tsx |       0 |      100 |       0 |       0 | 6                 
+  detailedQuestions.tsx |       0 |        0 |       0 |       0 | 8-134             
   index.tsx             |       0 |      100 |     100 |       0 | 7-19              
   reportWebVitals.ts    |       0 |        0 |       0 |       0 | 3-10              
  src/Progress Bar       |       0 |      100 |       0 |       0 |                   
@@ -134,7 +134,7 @@ All files               |   13.04 |     12.5 |   11.11 |   13.04 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        2.894 s
+Time:        3.123 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
