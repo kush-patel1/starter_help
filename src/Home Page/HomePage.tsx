@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import TestingImage from "./dudetesting.webp";
 import LogoImage from "./reactlogo.png";
 import './HomePage.css';
@@ -23,12 +24,14 @@ function HomePage({basicQuestions,detailedQuestions}:QuestionProps){
           <button style={{borderRadius: "5px", marginBottom: "20px"}} onClick={detailedQuestions}>DETAILED</button>
           <p>A thorough evaluation offering personalized career recommendations based on skills, interests, and values</p>
         </div>
-        <div  style={{textAlign: "center", bottom: "225px", left: "0px", position: "fixed", width: "50%"}}>
+        <div className="description">
+        <div className="picture">
           <img src={TestingImage} alt="a testing image" style={{width: "200px", height: "auto"}}></img>
         </div>
-        <div style={{textAlign: "center", bottom: "215px", left: "485px", position: "fixed", width: "50%"}}>
+        <div className="text">
           <h3>This is a header to explain whats going on down below</h3>
           <p>sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text </p>
+        </div>
         </div>
         <div className="footer">
           <h4>Footer</h4>
