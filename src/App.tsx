@@ -6,6 +6,8 @@ import './App.css';
 //import { ProgressBar } from './Progress Bar/ProgressBar';
 import TestingImage from "./dudetesting.webp";
 import LogoImage from "./reactlogo.png";
+import DetailedQuestions from './detailedQuestions';
+import BasicQuestions from './basicQuestions';
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 /*let keyData = "";
@@ -89,15 +91,11 @@ function App() {
     );
   } else if (pageVal === 1){
     return (
-      <div className="App">
-        <p>testing123</p>
-      </div>
+      <BasicQuestions></BasicQuestions>
     )
   } else {
     return (
-      <div className="App">
-        <p>yoyoyo</p>
-      </div>
+      <DetailedQuestions></DetailedQuestions>
     )
   }
 }
