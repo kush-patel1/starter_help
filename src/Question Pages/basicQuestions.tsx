@@ -25,12 +25,12 @@ function BasicQuestions(){
     }
     
     if(pageVal === 0){
-    return <div className='Basic-Questions'>
-        <header className="Basic-Questions-Header">
+    return <div className='BasicQuestions'>
+        <header className="BasicQuestions-Header">
             <h1>Basic Questions Page</h1>
             <ProgressBar progress={progress}/>
         </header>
-        <body className='Basic-Questions-Body'>
+        <body className='BasicQuestions-Body'>
             <ol>
                 <li>
                     <p>Do you prefer working indoors or outdoors?</p>
