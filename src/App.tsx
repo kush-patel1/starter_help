@@ -46,7 +46,7 @@ function App() {
       <div><HomePage basicQuestions={basicClick} detailedQuestions={detailedClick}></HomePage>{pageVal}</div>
     );
   } else if (pageVal === 1){
-  return <BasicQuestions></BasicQuestions>;
+    return <BasicQuestions></BasicQuestions>;
   } else {
     return <DetailedQuestions></DetailedQuestions>;
   }
