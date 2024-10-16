@@ -3,7 +3,7 @@
 > react-scripts test --coverage
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (40 ms)
+  ✕ renders learn react link (41 ms)
 
   ● renders learn react link
 
@@ -126,7 +126,7 @@ FAIL src/App.test.tsx
 ------------------------|---------|----------|---------|---------|-------------------
 File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ------------------------|---------|----------|---------|---------|-------------------
-All files               |    9.09 |       10 |      10 |     9.3 |                   
+All files               |    6.25 |     8.33 |    6.66 |    6.45 |                   
  src                    |   15.78 |     12.5 |      20 |   15.78 |                   
   App.tsx               |    37.5 |       25 |   33.33 |    37.5 | 37-41,48-51       
   index.tsx             |       0 |      100 |     100 |       0 | 7-19              
@@ -136,7 +136,7 @@ All files               |    9.09 |       10 |      10 |     9.3 |
  src/Progress Bar       |       0 |      100 |       0 |       0 |                   
   ProgressBar.tsx       |       0 |      100 |       0 |       0 | 6                 
  src/Question Pages     |       0 |        0 |       0 |       0 |                   
-  basicQuestions.tsx    |       0 |      100 |       0 |       0 | 4                 
+  basicQuestions.tsx    |       0 |        0 |       0 |       0 | 10-128            
   detailedQuestions.tsx |       0 |        0 |       0 |       0 | 8-134             
  src/Results Page       |       0 |      100 |       0 |       0 |                   
   Results.tsx           |       0 |      100 |       0 |       0 | 6                 
@@ -144,7 +144,7 @@ All files               |    9.09 |       10 |      10 |     9.3 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        2.992 s
+Time:        3.104 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
