@@ -1,10 +1,10 @@
 .BasicQuestions{
     text-align: left;
-    padding: 10px;
+    padding: 0px;
     scrollbar-color: white;
-}
+  }
 
-.BasicQuestions-header{
+  .BasicQuestions-Header{
     background-color: #f0229a;
     min-height: 10vh;
     display: flex;
@@ -16,15 +16,12 @@
     position: fixed;
     width: 100%;
     padding: 0 1in;
-}
-
-.BasicQuestions-header h1 {
+  }
+  .BasicQuestions-Header h1 {
     font-weight:600;
     margin-right: 20px;
   }
-
- 
-  .BasicQuestions-body{
+  .BasicQuestions-Body{
     background-color: #fcf4ea;
     max-height: 1000vh;
     align-items: flex-start;
@@ -57,7 +54,7 @@
     font-size: 20px;
   }
 
-  .BasicQuestions-footer {
+  .BasicQuestions-Footer {
     background-color: #142d1f;
     max-height: 1000vh;
     text-align:center;

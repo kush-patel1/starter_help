@@ -25,10 +25,10 @@ function BasicQuestions(){
     }
     
     if(pageVal === 0){
-    return <div className='BasicQuestions'>
+    return (<div className='BasicQuestions'>
         <header className="BasicQuestions-Header">
             <h1>Basic Questions Page</h1>
-            <ProgressBar progress={progress}/>
+            <ProgressBar progress={progress} />
         </header>
         <body className='BasicQuestions-Body'>
             <ol>
@@ -119,11 +119,11 @@ function BasicQuestions(){
             </ol>
             <Button className="BasicQuestions-getAnswersButton" onClick={homeClick}> Get Answers </Button>
         </body>
-        <footer className='BasicQuestions-footer'>
+        <footer className='BasicQuestions-Footer'>
           <Button className="Home-Button" onClick={homeClick}> HOME </Button>
           <p>Home | Products | Company | Blog</p>
         </footer>
-    </div>
+    </div>)
     } else{
         return <App />
     }
