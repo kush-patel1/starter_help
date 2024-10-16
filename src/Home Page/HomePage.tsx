@@ -14,12 +14,12 @@ function HomePage({basicQuestions,detailedQuestions}:QuestionProps){
           <h1 style={{ flex: 1, textAlign: "center", marginRight: "20px"}}>Home Page</h1>
           <button style={{ borderRadius: "5px" }}>Log In</button>
         </div>
-        <div className="basicQuestions">
+        <div className="homeBasicQuestions">
           <h4 style={{marginBottom: "20px"}}>Basic Questions</h4>
           <button style={{borderRadius: "5px", marginBottom: "20px"}} onClick={basicQuestions}>BASIC</button>
           <p>A brief overview providing broad career suggestions based on key interests on a surface level</p>
         </div>
-        <div className="detailedQuestions">
+        <div className="homeDetailedQuestions">
           <h4 style={{marginBottom: "20px"}}>Detailed Questions</h4>
           <button style={{borderRadius: "5px", marginBottom: "20px"}} onClick={detailedQuestions}>DETAILED</button>
           <p>A thorough evaluation offering personalized career recommendations based on skills, interests, and values</p>
