@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './detailedQuestions.css';
 import { Button, Form } from 'react-bootstrap';
-import App from './App';
-import { ProgressBar } from './Progress Bar/ProgressBar';
+import App from '../App';
+import { ProgressBar } from '../Progress Bar/ProgressBar';
 
 function DetailedQuestions() {
   const [pageVal, setPageVal] = useState<number>(0);

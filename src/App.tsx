@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 //import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
+//import { Button, Form } from 'react-bootstrap';
 //import { Button, Form } from 'react-bootstrap';
 //import { Results } from './Results Page/Results';
 //import { ProgressBar } from './Progress Bar/ProgressBar';
-import TestingImage from "./dudetesting.webp";
-import LogoImage from "./reactlogo.png";
-import DetailedQuestions from './detailedQuestions';
-import BasicQuestions from './basicQuestions';
+import BasicQuestions from './Question Pages/basicQuestions';
+import DetailedQuestions from './Question Pages/detailedQuestions';
+import HomePage from './Home Page/HomePage';
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 /*let keyData = "";
@@ -42,61 +43,12 @@ function App() {
   
   if (pageVal === 0){
     return (
-      <div className="App">
-        <div style={{
-          backgroundColor: "green", 
-          border: "3px solid black", 
-          display: "flex", 
-          justifyContent: "space-between", 
-          alignItems: "center", 
-          padding: "15px",
-          position: "fixed",
-          width: "100%"
-        }}> 
-          <img src={LogoImage} alt="Company logo" style={{width: "75px", height: "auto"}} />
-          <h1 style={{ flex: 1, textAlign: "center", marginRight: "20px"}}>Home Page</h1>
-          <button style={{ borderRadius: "5px" }}>Log In</button>
-        </div>
-        <div style={{wordWrap: "break-word", width: "500px", position: "fixed", left: "220px", bottom: "500px", padding: "20px", float: "left", display: "inline-block", backgroundColor: "yellow", border: "2px solid black", borderRadius: "15px"}}>
-          <h4 style={{marginBottom: "20px"}}>Basic Questions</h4>
-          <button style={{borderRadius: "5px", marginBottom: "20px"}} onClick={basicClick}>BASIC</button>
-          <p>A brief overview providing broad career suggestions based on key interests on a surface level</p>
-        </div>
-        <div style={{wordWrap: "break-word", width: "500px", position: "fixed", bottom: "500px", right: "220px", padding: "20px", float: "right", display: "inline-block", backgroundColor: "orange", border: "2px solid black", borderRadius: "15px"}}>
-          <h4 style={{marginBottom: "20px"}}>Detailed Questions</h4>
-          <button style={{borderRadius: "5px", marginBottom: "20px"}} onClick={detailedClick}>DETAILED</button>
-          <p>A thorough evaluation offering personalized career recommendations based on skills, interests, and values</p>
-        </div>
-        <div  style={{textAlign: "center", bottom: "225px", left: "0px", position: "fixed", width: "50%"}}>
-          <img src={TestingImage} alt="Testing example" style={{width: "200px", height: "auto"}} />
-        </div>
-        <div style={{textAlign: "center", bottom: "215px", left: "485px", position: "fixed", width: "50%"}}>
-          <h3>This is a header to explain whats going on down below</h3>
-          <p>sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text </p>
-        </div>
-        <div style={{border: "3px solid black", padding: "15px", backgroundColor: "green", textAlign: "center", bottom: "0", left: "0", position: "fixed", width: "100%"}}>
-          <h4>Footer</h4>
-        </div>
-        {
-          /*
-          <Form>
-            <Form.Label>API Key:</Form.Label>
-            <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
-            <br></br>
-            <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
-          </Form> 
-          */
-        }
-      </div>
+      <div><HomePage basicQuestions={basicClick} detailedQuestions={detailedClick}></HomePage>{pageVal}</div>
     );
   } else if (pageVal === 1){
-    return (
-      <BasicQuestions></BasicQuestions>
-    )
+  return <BasicQuestions></BasicQuestions>;
   } else {
-    return (
-      <DetailedQuestions></DetailedQuestions>
-    )
+    return <DetailedQuestions></DetailedQuestions>;
   }
 }
 
