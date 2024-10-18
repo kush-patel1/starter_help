@@ -43,7 +43,7 @@ function App() {
   
   if (pageVal === 0){
     return (
-      <div><HomePage basicQuestions={basicClick} detailedQuestions={detailedClick}></HomePage>{pageVal}</div>
+      <div><HomePage basicQuestions={basicClick} detailedQuestions={detailedClick}></HomePage></div>
     );
   } else if (pageVal === 1){
     return <BasicQuestions></BasicQuestions>;
