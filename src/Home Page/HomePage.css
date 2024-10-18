@@ -23,7 +23,6 @@
     margin-left: 10%;
     bottom: 60%;
     padding: 20px;
-    float: left;
     display: inline-block;
     background-color: yellow;
     border: 2px solid black;
@@ -41,7 +40,6 @@ border: "2px solid black", borderRadius: "15px"}} */
     margin-top: 2%;
     margin-right: 10%;
     padding: 20px;
-    float: right;
     display: inline-block;
     background-color: orange;
     border: 2px solid black;
