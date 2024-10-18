@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './basicQuestions.css';
 import { Button, Form } from 'react-bootstrap';
-import App from '../App';
+//import App from '../App';
 import { ProgressBar } from '../Progress Bar/ProgressBar';
 
 interface QuestionProps {
