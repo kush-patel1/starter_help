@@ -36,11 +36,20 @@ function BasicQuestions(){
                     <p>Do you prefer working indoors or outdoors?</p>
                     <Form>
                         <label>
-                            <textarea
-                            className='BasicQuestions-textArea'
+                            <input 
+                            className='BasicQuestions-MultipleChoice'
+                            type="radio" 
                             name="answer1"
-                            value={answers[0]}
+                            value="Indoors"
                             onChange={(event) => handleAnswerChange(0, event.target.value)}/>
+                             Indoors
+                            <input 
+                            className='BasicQuestions-MultipleChoice'
+                            type="radio" 
+                            name="answer1"
+                            value="Outdoors"
+                            onChange={(event) => handleAnswerChange(0, event.target.value)}/>
+                             Outdoors
                         </label>
                     </Form>
                 </li>
