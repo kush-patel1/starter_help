@@ -22,7 +22,7 @@ function BasicQuestions({homePage,resultsPage}: QuestionProps){
     const answeredQuestions = answers.filter(answer => answer !== '').length;
     const progress = Math.floor((answeredQuestions / totalQuestions) * 100);
     
-    if(pageVal === 0){
+
     return (<div className='BasicQuestions'>
         <header className="BasicQuestions-Header">
             <h1>Basic Questions Page</h1>
@@ -122,9 +122,6 @@ function BasicQuestions({homePage,resultsPage}: QuestionProps){
           <p>Home | Products | Company | Blog</p>
         </footer>
     </div>)
-    } else{
-        return <App />
     }
-}
 
 export default BasicQuestions;
