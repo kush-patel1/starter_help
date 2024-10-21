@@ -22,6 +22,7 @@ if (prevKey !== null) {
 function App() {
   //const [key, setKey] = useState<string>(keyData); //for api key input
   const [pageVal, setPageVal] = useState<number>(0);
+  const [ifLogged, setIfLogged] = useState<boolean>(false);
 
   //sets the local storage item to the api key the user inputed
   /*function handleSubmit() {
@@ -34,7 +35,11 @@ function App() {
     setKey(event.target.value);
   }*/
  function homeClick(){
-  setPageVal(0);
+  if (!ifLogged){
+    setPageVal(0);
+  } else {
+    setPageVal(4);
+  }
  }
 
   function basicClick() {
@@ -48,15 +53,22 @@ function App() {
   function resultsClick(){
     setPageVal(3);
   }
+
+  function loggedClick(){
+    setPageVal(4);
+    setIfLogged(true);
+  }
   
   if (pageVal === 0){
     return (
-      <div><HomePage basicQuestions={basicClick} detailedQuestions={detailedClick}></HomePage></div>
+      <div><HomePage basicQuestions={basicClick} detailedQuestions={detailedClick} loggedPage={loggedClick}></HomePage></div>
     );
   } else if (pageVal === 1){
     return <BasicQuestions homePage={homeClick} resultsPage={resultsClick}></BasicQuestions>;
   } else if (pageVal === 2){
     return <DetailedQuestions homePage={homeClick} resultsPage={resultsClick}></DetailedQuestions>;
+  } else if (pageVal === 4){
+    return <LoggedInPage homePage={homeClick} basicQuestions={basicClick} detailedQuestions={detailedClick}></LoggedInPage>
   }
   else{
     return <Results/>
