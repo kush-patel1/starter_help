@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import './detailedQuestions.css';
 import { Button, Form } from 'react-bootstrap';
-import App from '../App';
+//import App from '../App';
 import { ProgressBar } from '../Progress Bar/ProgressBar';
 
-function DetailedQuestions() {
-  const [pageVal, setPageVal] = useState<number>(0);
+interface QuestionProps {
+    homePage: () => void;
+    resultsPage: () => void;
+  }
+
+function DetailedQuestions({homePage,resultsPage}: QuestionProps) {
   const totalQuestions = 7;
   const [answers, setAnswers] = useState(Array(totalQuestions).fill(''));
 
@@ -18,16 +22,12 @@ function DetailedQuestions() {
   const answeredQuestions = answers.filter(answer => answer !== '').length;
   const progress = Math.floor((answeredQuestions / totalQuestions) * 100);
 
-  function homeClick() {
-    setPageVal(1);
-  }
-
-  if (pageVal === 0) {
     return (
       <div className='detailedQuestions'>
         <header className='DetailedQuestions-header'>
           <h1>Detailed Questions Page</h1>
           <ProgressBar progress={progress} />
+          <Button className="Home-Button" onClick={homePage}> HOME </Button>
         </header>
         <body className='DetailedQuestions-body'>
           <ol>
@@ -122,17 +122,13 @@ function DetailedQuestions() {
               </Form>
             </li>
           </ol>
-          <Button className="DetailedQuestions-getAnswersButton" onClick={homeClick}> Get Answers </Button>
+          <Button className="DetailedQuestions-getAnswersButton" onClick={resultsPage}> Get Answers </Button>
         </body>
         <footer className='DetailedQuestions-footer'>
-          <Button className="Home-Button" onClick={homeClick}> HOME </Button>
           <p>Home | Products | Company | Blog</p>
         </footer>
       </div>
     );
-  } else {
-    return <App />;
   }
-}
 
 export default DetailedQuestions;

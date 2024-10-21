@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import './basicQuestions.css';
 import { Button, Form } from 'react-bootstrap';
-import App from '../App';
+//import App from '../App';
 import { ProgressBar } from '../Progress Bar/ProgressBar';
 
+interface QuestionProps {
+    homePage: () => void;
+    resultsPage: () => void;
+  }
 
-
-function BasicQuestions(){
-    const [pageVal, setPageVal] = useState<number>(0);
+function BasicQuestions({homePage,resultsPage}: QuestionProps){
     const totalQuestions = 7;
     const [answers, setAnswers] = useState(Array(totalQuestions).fill(''));
 
@@ -19,16 +21,13 @@ function BasicQuestions(){
 
     const answeredQuestions = answers.filter(answer => answer !== '').length;
     const progress = Math.floor((answeredQuestions / totalQuestions) * 100);
-
-    function homeClick() {
-        setPageVal(1);
-    }
     
-    if(pageVal === 0){
+
     return (<div className='BasicQuestions'>
         <header className="BasicQuestions-Header">
             <h1>Basic Questions Page</h1>
             <ProgressBar progress={progress} />
+            <Button className="Home-Button" onClick={homePage}> HOME </Button>
         </header>
         <body className='BasicQuestions-Body'>
             <ol>
@@ -117,16 +116,12 @@ function BasicQuestions(){
                     </Form>
                 </li>
             </ol>
-            <Button className="BasicQuestions-getAnswersButton" onClick={homeClick}> Get Answers </Button>
+            <Button className="BasicQuestions-getAnswersButton" onClick={resultsPage}> Get Answers </Button>
         </body>
         <footer className='BasicQuestions-Footer'>
-          <Button className="Home-Button" onClick={homeClick}> HOME </Button>
           <p>Home | Products | Company | Blog</p>
         </footer>
     </div>)
-    } else{
-        return <App />
     }
-}
 
 export default BasicQuestions;
