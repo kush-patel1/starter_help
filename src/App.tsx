@@ -8,6 +8,7 @@ import { Results } from './Results Page/Results';
 //import { ProgressBar } from './Progress Bar/ProgressBar';
 import BasicQuestions from './Question Pages/basicQuestions';
 import DetailedQuestions from './Question Pages/detailedQuestions';
+import LoggedInPage from './Logged In Page/loggedPage';
 import HomePage from './Home Page/HomePage';
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
