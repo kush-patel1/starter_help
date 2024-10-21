@@ -1,16 +1,10 @@
 import React, { useState } from 'react';
-//import logo from './logo.svg';
-//import logo from './logo.svg';
 import './App.css';
-//import { Button, Form } from 'react-bootstrap';
-//import { Button, Form } from 'react-bootstrap';
 import { Results } from './Results Page/Results';
-//import { ProgressBar } from './Progress Bar/ProgressBar';
 import BasicQuestions from './Question Pages/basicQuestions';
 import DetailedQuestions from './Question Pages/detailedQuestions';
 import LoggedInPage from './Logged In Page/loggedPage';
 import HomePage from './Home Page/HomePage';
-import { Button, Form } from 'react-bootstrap';
 
 
 function App() {
@@ -28,8 +22,10 @@ function App() {
 
   //sets the local storage item to the api key the user inputed
   function handleSubmit() {
+    if(key!==""){
     localStorage.setItem(saveKeyData, JSON.stringify(key));
-    window.location.reload(); //when making a mistake and changing the key again, I found that I have to reload the whole site before openai refreshes what it has stores for the local storage variable
+    }
+    //window.location.reload(); //when making a mistake and changing the key again, I found that I have to reload the whole site before openai refreshes what it has stores for the local storage variable
   }
 
   //whenever there's a change it'll store the api key in a local state called key but it won't be set in the local storage until the user clicks the submit button
@@ -38,11 +34,7 @@ function App() {
   }
 
  function homeClick(){
-  if (!ifLogged){
     setPageVal(0);
-  } else {
-    setPageVal(4);
-  }
  }
 
   function basicClick() {
@@ -58,40 +50,23 @@ function App() {
   }
 
   function loggedClick(){
-    setPageVal(4);
     setIfLogged(true);
   }
   
-  if (pageVal === 0){
-
-  function inputAPI(){
-    homeClick();
-    handleSubmit();
-  }
-
-  if(pageVal===5){
-    return <div>
-    <Form.Group controlId="APIKeyInput">
-      <Form.Label>Key:</Form.Label>
-      <Form.Control
-        onChange={changeKey} />
-    </Form.Group>
-    <Button onClick={inputAPI}>Submit Key</Button>
-  </div>;
-  }
   
-  else if (pageVal === 0){
+  if (pageVal === 0 && !ifLogged){
     return (
-      <div><HomePage basicQuestions={basicClick} detailedQuestions={detailedClick} loggedPage={loggedClick}></HomePage></div>
-      <div><HomePage basicQuestions={basicClick} detailedQuestions={detailedClick} handleSubmit={handleSubmit}
+      <div><HomePage basicQuestions={basicClick} detailedQuestions={detailedClick} loggedPage={loggedClick} handleSubmit={handleSubmit}
       changeKey = {changeKey}></HomePage></div>
     );
-  } else if (pageVal === 1){
-    return <BasicQuestions homePage={homeClick} resultsPage={resultsClick}></BasicQuestions>;
+  }
+    else if (pageVal === 0){
+      return <LoggedInPage basicQuestions={basicClick} detailedQuestions={detailedClick} handleSubmit={handleSubmit} changeKey = {changeKey}></LoggedInPage>
+    }
+   else if (pageVal === 1){
+    return <BasicQuestions homePage={homeClick} resultsPage={resultsClick} handleSubmit={handleSubmit} changeKey = {changeKey}></BasicQuestions>;
   } else if (pageVal === 2){
-    return <DetailedQuestions homePage={homeClick} resultsPage={resultsClick}></DetailedQuestions>;
-  } else if (pageVal === 4){
-    return <LoggedInPage homePage={homeClick} basicQuestions={basicClick} detailedQuestions={detailedClick}></LoggedInPage>
+    return <DetailedQuestions homePage={homeClick} resultsPage={resultsClick} handleSubmit={handleSubmit} changeKey = {changeKey}></DetailedQuestions>;
   }
   else{
     return <Results/>

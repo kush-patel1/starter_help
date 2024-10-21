@@ -2,19 +2,21 @@
 import TestingImage from "./dudetesting copy.webp";
 import LogoImage from "./reactlogo copy.png";
 import './loggedIn.css';
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import App from '../App';
 import { x } from "../Home Page/HomePage";
+import { Button, Form } from "react-bootstrap";
 
 
 interface QuestionProps {
     basicQuestions: () => void;
     detailedQuestions: () => void;
-    homePage: () => void;
+    handleSubmit: () => void;
+    changeKey: (event: ChangeEvent<HTMLInputElement>) => void;
   }
 
 
-function LoggedInPage({basicQuestions,detailedQuestions, homePage}:QuestionProps){
+function LoggedInPage({basicQuestions,detailedQuestions,handleSubmit,changeKey}:QuestionProps){
 
     const [pageVal, setPageVal] = useState<number>(0);
 
@@ -64,7 +66,11 @@ function LoggedInPage({basicQuestions,detailedQuestions, homePage}:QuestionProps
                 </div>
             </div>
             <div className="logged-footer">
-            <h4>Footer</h4>
+            <Form>
+            <Form.Label>API Key:</Form.Label>
+            <Form.Control className="API-form" type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
+            <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
+          </Form>
             </div>
             {
             /*
