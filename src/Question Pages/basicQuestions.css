@@ -1,6 +1,5 @@
 .BasicQuestions{
     text-align: left;
-    padding: 0px;
     scrollbar-color: white;
   }
 
@@ -29,21 +28,19 @@
     display: flex;
     flex-direction: column;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: calc(5px + 2vmin);
+    font-size: calc(5px + 3vmin);
     color: rgb(65, 65, 65);
     padding: 1in;
   }
 
-  .BasicQuestions-textArea {
-    width: 1000px;
-    height: 100px; 
-    padding: 10px;
-    font-size: 16px;
-    resize: vertical;
-    box-sizing: border-box; 
-    overflow-y:auto;
-    line-height: 1.5;
-    vertical-align: top;
+  .BasicQuestions-MultipleChoice {
+    margin-left: 50px;
+    margin-bottom: 20px;
+  }
+
+  .basicCheckmark{
+    margin-left: -35%;
+    align-items: center;
   }
 
   .BasicQuestions-getAnswersButton{

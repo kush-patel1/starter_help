@@ -46,6 +46,11 @@
     vertical-align: top;
   }
 
+  .detailedCheckmark{
+    margin-left: -30%;
+    align-items: center;
+  }
+
   .DetailedQuestions-getAnswersButton{
     align-self: flex-end;
     margin-top: 20px;

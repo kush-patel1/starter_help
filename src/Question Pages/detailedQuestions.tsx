@@ -27,6 +27,7 @@ function DetailedQuestions({homePage,resultsPage}: QuestionProps) {
         <header className='DetailedQuestions-header'>
           <h1>Detailed Questions Page</h1>
           <ProgressBar progress={progress} />
+          <p className="detailedCheckmark">{progress === 100 ? "✔️": ""}</p>
           <Button className="Home-Button" onClick={homePage}> HOME </Button>
         </header>
         <body className='DetailedQuestions-body'>
@@ -122,7 +123,7 @@ function DetailedQuestions({homePage,resultsPage}: QuestionProps) {
               </Form>
             </li>
           </ol>
-          <Button className="DetailedQuestions-getAnswersButton" onClick={resultsPage}> Get Answers </Button>
+          <Button className="DetailedQuestions-getAnswersButton" onClick={resultsPage} disabled={progress !== 100}> Get Answers </Button>
         </body>
         <footer className='DetailedQuestions-footer'>
           <p>Home | Products | Company | Blog</p>
