@@ -2,12 +2,16 @@
 import TestingImage from "./dudetesting.webp";
 import LogoImage from "./reactlogo.png";
 import './HomePage.css';
+import { Button, Form } from "react-bootstrap";
+import { ChangeEvent } from "react";
 
 interface QuestionProps {
     basicQuestions: () => void;
     detailedQuestions: () => void;
+    handleSubmit: () => void;
+    changeKey: (event: ChangeEvent<HTMLInputElement>) => void;
   }
-function HomePage({basicQuestions,detailedQuestions}:QuestionProps){
+function HomePage({basicQuestions,detailedQuestions,handleSubmit,changeKey}:QuestionProps){
     return <div className="App">
         <div className="homeHeader"> 
           <img src={LogoImage} alt="a logo image" style={{width: "75px", height: "auto"}}></img>
@@ -34,18 +38,12 @@ function HomePage({basicQuestions,detailedQuestions}:QuestionProps){
         </div>
         </div>
         <div className="footer">
-          <h4>Footer</h4>
-        </div>
-        {
-          /*
           <Form>
             <Form.Label>API Key:</Form.Label>
-            <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
-            <br></br>
+            <Form.Control className="API-form" type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
             <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
-          </Form> 
-          */
-        }
+          </Form>
+        </div>
       </div>
 }
 export default HomePage;
