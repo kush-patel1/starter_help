@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import './App.css';
 //import { Button, Form } from 'react-bootstrap';
 //import { Button, Form } from 'react-bootstrap';
-//import { Results } from './Results Page/Results';
+import { Results } from './Results Page/Results';
 //import { ProgressBar } from './Progress Bar/ProgressBar';
 import BasicQuestions from './Question Pages/basicQuestions';
 import DetailedQuestions from './Question Pages/detailedQuestions';
@@ -33,6 +33,9 @@ function App() {
   /*function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
     setKey(event.target.value);
   }*/
+ function homeClick(){
+  setPageVal(0);
+ }
 
   function basicClick() {
     setPageVal(1);
@@ -42,20 +45,21 @@ function App() {
     setPageVal(2);
   }
 
-  function loggedClick() {
+  function resultsClick(){
     setPageVal(3);
   }
   
   if (pageVal === 0){
     return (
-      <div><HomePage basicQuestions={basicClick} detailedQuestions={detailedClick} loggedPage={loggedClick}></HomePage>{pageVal}</div>
+      <div><HomePage basicQuestions={basicClick} detailedQuestions={detailedClick}></HomePage></div>
     );
   } else if (pageVal === 1){
-    return <BasicQuestions></BasicQuestions>;
+    return <BasicQuestions homePage={homeClick} resultsPage={resultsClick}></BasicQuestions>;
   } else if (pageVal === 2){
-    return <DetailedQuestions></DetailedQuestions>;
-  } else {
-    return <LoggedInPage></LoggedInPage>
+    return <DetailedQuestions homePage={homeClick} resultsPage={resultsClick}></DetailedQuestions>;
+  }
+  else{
+    return <Results/>
   }
 }
 
