@@ -34,18 +34,14 @@
     padding: 1in;
   }
 
-  .BasicQuestions
+  .BasicQuestions-MultipleChoice {
+    margin-left: 50px;
+    margin-bottom: 20px;
+  }
 
-  .BasicQuestions-textArea {
-    width: 1000px;
-    height: 100px; 
-    padding: 10px;
-    font-size: 16px;
-    resize: vertical;
-    box-sizing: border-box; 
-    overflow-y:auto;
-    line-height: 1.5;
-    vertical-align: top;
+  .checkmark{
+    margin-left: -400px;
+    margin-top: 10px;
   }
 
   .BasicQuestions-getAnswersButton{
