@@ -2,8 +2,10 @@
 import TestingImage from "./dudetesting.webp";
 import LogoImage from "./reactlogo.png";
 import './HomePage.css';
-import { useState } from "react";
+import { useState, createContext, SetStateAction } from "react";
+import ReactDOM from "react-dom/client";
 
+export let x: string[] = [];
 import { Button, Form } from "react-bootstrap";
 import { ChangeEvent } from "react";
 
@@ -30,10 +32,14 @@ function HomePage({basicQuestions,detailedQuestions, loggedPage}:QuestionProps){
       alert("Both username and password are required.");
       return; // Prevent login if either field is empty
     }
-  
+    x.push(username)
     // If both fields are filled, call loggedPage and close the popup
     loggedPage(); // Navigate to the loggedPage component
     setIsPopupOpen(false); // Close the popup after login
+  };
+
+  const setUsernameHandler = (e: { target: { value: SetStateAction<string>; }; }) => {
+    setUsername(e.target.value);
   };
 
   return <div className="App">
@@ -53,7 +59,7 @@ function HomePage({basicQuestions,detailedQuestions, loggedPage}:QuestionProps){
               <input
                 type="text"
                 value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                onChange={setUsernameHandler}
                 placeholder="Enter Username"
               />
 
@@ -141,4 +147,5 @@ function HomePage({basicQuestions,detailedQuestions,handleSubmit,changeKey}:Ques
         </div>
       </div>
 }
+
 export default HomePage;

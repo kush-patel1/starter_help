@@ -4,21 +4,25 @@ import LogoImage from "./reactlogo copy.png";
 import './loggedIn.css';
 import { useState } from "react";
 import App from '../App';
+import { x } from "../Home Page/HomePage";
+
 
 interface QuestionProps {
     basicQuestions: () => void;
     detailedQuestions: () => void;
-    HomePage: () => void;
+    homePage: () => void;
   }
 
 
-function LoggedInPage({basicQuestions,detailedQuestions, HomePage}:QuestionProps){
+function LoggedInPage({basicQuestions,detailedQuestions, homePage}:QuestionProps){
 
     const [pageVal, setPageVal] = useState<number>(0);
 
     function homeClick() {
         setPageVal(1);
     }
+
+    const latestUsername = x[x.length - 1];
 
 
     if (pageVal === 0){
@@ -29,7 +33,7 @@ function LoggedInPage({basicQuestions,detailedQuestions, HomePage}:QuestionProps
                 <button style={{ borderRadius: "5px" }} onClick={homeClick}>Log Out</button>
             </div>
             <div>
-                <h2 style={{padding: "20px"}}>Welcome Back Username!</h2>
+                <h2 style={{padding: "20px"}}>Welcome Back {latestUsername}!</h2>
             </div>
             <div className="logged-homeBasicQuestions">
             <h4 style={{marginBottom: "20px"}}>Basic Questions</h4>

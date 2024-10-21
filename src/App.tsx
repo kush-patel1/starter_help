@@ -15,6 +15,7 @@ import { Button, Form } from 'react-bootstrap';
 
 function App() {
   const [pageVal, setPageVal] = useState<number>(0);
+  const [ifLogged, setIfLogged] = useState<boolean>(false);
 
   //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
   let keyData = "";
@@ -37,7 +38,11 @@ function App() {
   }
 
  function homeClick(){
-  setPageVal(0);
+  if (!ifLogged){
+    setPageVal(0);
+  } else {
+    setPageVal(4);
+  }
  }
 
   function basicClick() {
@@ -51,6 +56,13 @@ function App() {
   function resultsClick(){
     setPageVal(3);
   }
+
+  function loggedClick(){
+    setPageVal(4);
+    setIfLogged(true);
+  }
+  
+  if (pageVal === 0){
 
   function inputAPI(){
     homeClick();
@@ -70,6 +82,7 @@ function App() {
   
   else if (pageVal === 0){
     return (
+      <div><HomePage basicQuestions={basicClick} detailedQuestions={detailedClick} loggedPage={loggedClick}></HomePage></div>
       <div><HomePage basicQuestions={basicClick} detailedQuestions={detailedClick} handleSubmit={handleSubmit}
       changeKey = {changeKey}></HomePage></div>
     );
@@ -77,6 +90,8 @@ function App() {
     return <BasicQuestions homePage={homeClick} resultsPage={resultsClick}></BasicQuestions>;
   } else if (pageVal === 2){
     return <DetailedQuestions homePage={homeClick} resultsPage={resultsClick}></DetailedQuestions>;
+  } else if (pageVal === 4){
+    return <LoggedInPage homePage={homeClick} basicQuestions={basicClick} detailedQuestions={detailedClick}></LoggedInPage>
   }
   else{
     return <Results/>
