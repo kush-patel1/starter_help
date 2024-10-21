@@ -1,6 +1,5 @@
 .BasicQuestions{
     text-align: left;
-    padding: 0px;
     scrollbar-color: white;
   }
 
@@ -39,9 +38,9 @@
     margin-bottom: 20px;
   }
 
-  .checkmark{
-    margin-left: -400px;
-    margin-top: 10px;
+  .basicCheckmark{
+    margin-left: -35%;
+    align-items: center;
   }
 
   .BasicQuestions-getAnswersButton{

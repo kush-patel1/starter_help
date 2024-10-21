@@ -29,7 +29,7 @@ function BasicQuestions(){
         <header className="BasicQuestions-Header">
             <h1>Basic Questions Page</h1>
             <ProgressBar progress={progress} />
-            <p className="checkmark">{progress === 100 ? "✔️": ""}</p>
+            <p className="basicCheckmark">{progress === 100 ? "✔️": ""}</p>
         </header>
         <body className='BasicQuestions-Body'>
             <ol>

@@ -28,6 +28,7 @@ function DetailedQuestions() {
         <header className='DetailedQuestions-header'>
           <h1>Detailed Questions Page</h1>
           <ProgressBar progress={progress} />
+          <p className="detailedCheckmark">{progress === 100 ? "✔️": ""}</p>
         </header>
         <body className='DetailedQuestions-body'>
           <ol>
@@ -122,7 +123,7 @@ function DetailedQuestions() {
               </Form>
             </li>
           </ol>
-          <Button className="DetailedQuestions-getAnswersButton" onClick={homeClick}> Get Answers </Button>
+          <Button className="DetailedQuestions-getAnswersButton" onClick={homeClick} disabled={progress !== 100}> Get Answers </Button>
         </body>
         <footer className='DetailedQuestions-footer'>
           <Button className="Home-Button" onClick={homeClick}> HOME </Button>
