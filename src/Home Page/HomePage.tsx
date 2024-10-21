@@ -2,10 +2,10 @@
 import TestingImage from "./dudetesting.webp";
 import LogoImage from "./reactlogo.png";
 import './HomePage.css';
-import { useState, createContext, SetStateAction } from "react";
-import ReactDOM from "react-dom/client";
 import { Button, Form } from "react-bootstrap";
 import { ChangeEvent } from "react";
+import { useState, /*createContext,*/ SetStateAction } from "react";
+//import ReactDOM from "react-dom/client";
 
 export let x: string[] = [];
 
