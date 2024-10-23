@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import './detailedQuestions.css';
 import { Button, Form } from 'react-bootstrap';
 //import App from '../App';
@@ -7,9 +7,11 @@ import { ProgressBar } from '../Progress Bar/ProgressBar';
 interface QuestionProps {
     homePage: () => void;
     resultsPage: () => void;
+    handleSubmit: () => void;
+    changeKey: (event: ChangeEvent<HTMLInputElement>) => void;
   }
 
-function DetailedQuestions({homePage,resultsPage}: QuestionProps) {
+function DetailedQuestions({homePage,resultsPage,handleSubmit,changeKey}: QuestionProps) {
   const totalQuestions = 7;
   const [answers, setAnswers] = useState(Array(totalQuestions).fill(''));
 
@@ -126,7 +128,11 @@ function DetailedQuestions({homePage,resultsPage}: QuestionProps) {
           <Button className="DetailedQuestions-getAnswersButton" onClick={resultsPage} disabled={progress !== 100}> Get Answers </Button>
         </body>
         <footer className='DetailedQuestions-footer'>
-          <p>Home | Products | Company | Blog</p>
+        <Form>
+            <Form.Label>API Key:</Form.Label>
+            <Form.Control className="API-form" type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
+            <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
+          </Form>
         </footer>
       </div>
     );

@@ -94,3 +94,13 @@ position: "fixed", width: "100%"}}*/
   
   .popup button {
   }
+
+.API-form{
+    width: 50%;
+    display: inline-block;
+    position: relative;
+}
+
+.Submit-Button{
+    display: inline-block;
+}
