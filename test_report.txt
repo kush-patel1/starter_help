@@ -3,7 +3,7 @@
 > react-scripts test --coverage
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (46 ms)
+  ✕ renders learn react link (48 ms)
 
   ● renders learn react link
 
@@ -139,31 +139,6 @@ FAIL src/App.test.tsx
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
-------------------------|---------|----------|---------|---------|-------------------
-File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
-------------------------|---------|----------|---------|---------|-------------------
-All files               |   16.19 |    21.87 |    4.08 |    16.5 |                   
- src                    |      25 |    22.22 |      10 |      25 |                   
-  App.tsx               |      36 |    28.57 |    12.5 |      36 | 19,25-53,63-72    
-  index.tsx             |       0 |      100 |     100 |       0 | 7-19              
-  reportWebVitals.ts    |       0 |        0 |       0 |       0 | 3-10              
- src/Home Page          |   47.05 |     37.5 |      20 |   47.05 |                   
-  HomePage.tsx          |   47.05 |     37.5 |      20 |   47.05 | 27,31-38,42,71    
- src/Logged In Page     |       0 |        0 |       0 |       0 |                   
-  loggedPage.tsx        |       0 |        0 |       0 |       0 | 21-87             
- src/Progress Bar       |       0 |      100 |       0 |       0 |                   
-  ProgressBar.tsx       |       0 |      100 |       0 |       0 | 6                 
- src/Question Pages     |       0 |        0 |       0 |       0 |                   
-  basicQuestions.tsx    |       0 |        0 |       0 |       0 | 15-200            
-  detailedQuestions.tsx |       0 |        0 |       0 |       0 | 15-122            
- src/Results Page       |       0 |      100 |       0 |       0 |                   
-  Results.tsx           |       0 |      100 |       0 |       0 | 7                 
-------------------------|---------|----------|---------|---------|-------------------
-Test Suites: 1 failed, 1 total
-Tests:       1 failed, 1 total
-Snapshots:   0 total
-Time:        3.137 s
-Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
 declaring it in its dependencies. This is currently working because
@@ -176,3 +151,28 @@ ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
 your devDependencies to work around this error. This will make this message
 go away.[0m
   
+------------------------|---------|----------|---------|---------|-------------------
+File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+------------------------|---------|----------|---------|---------|-------------------
+All files               |   17.27 |    21.87 |    3.92 |   17.59 |                   
+ src                    |   26.31 |    22.22 |      10 |   26.31 |                   
+  App.tsx               |   37.03 |    28.57 |    12.5 |   37.03 | 20,26-55,65-74    
+  index.tsx             |       0 |      100 |     100 |       0 | 7-19              
+  reportWebVitals.ts    |       0 |        0 |       0 |       0 | 3-10              
+ src/Home Page          |   47.05 |     37.5 |      20 |   47.05 |                   
+  HomePage.tsx          |   47.05 |     37.5 |      20 |   47.05 | 27,31-38,42,71    
+ src/Logged In Page     |       0 |        0 |       0 |       0 |                   
+  loggedPage.tsx        |       0 |        0 |       0 |       0 | 21-87             
+ src/Progress Bar       |       0 |      100 |       0 |       0 |                   
+  ProgressBar.tsx       |       0 |      100 |       0 |       0 | 6                 
+ src/Question Pages     |       0 |        0 |       0 |       0 |                   
+  basicQuestions.tsx    |       0 |        0 |       0 |       0 | 15-203            
+  detailedQuestions.tsx |       0 |        0 |       0 |       0 | 15-126            
+ src/Results Page       |      50 |      100 |       0 |      50 |                   
+  Results.tsx           |      50 |      100 |       0 |      50 | 11                
+------------------------|---------|----------|---------|---------|-------------------
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 1 total
+Snapshots:   0 total
+Time:        3.314 s
+Ran all test suites.
