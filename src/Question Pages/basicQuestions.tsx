@@ -6,7 +6,7 @@ import { ProgressBar } from '../Progress Bar/ProgressBar';
 
 interface QuestionProps {
     homePage: () => void;
-    resultsPage: () => void;
+    resultsPage: (a: any[]) => void;
     handleSubmit: () => void;
     changeKey: (event: ChangeEvent<HTMLInputElement>) => void;
   }
@@ -24,6 +24,9 @@ function BasicQuestions({homePage,resultsPage,handleSubmit,changeKey}: QuestionP
     const answeredQuestions = answers.filter(answer => answer !== '').length;
     const progress = Math.floor((answeredQuestions / totalQuestions) * 100);
     
+    function getResults(){
+        resultsPage(answers);
+      }
 
     return (<div className='BasicQuestions'>
         <header className="BasicQuestions-Header">
@@ -203,7 +206,7 @@ function BasicQuestions({homePage,resultsPage,handleSubmit,changeKey}: QuestionP
                     </Form>
                 </li>
             </ol>
-            <Button className="BasicQuestions-getAnswersButton" onClick={resultsPage} disabled={progress !== 100}> Get Answers </Button>
+            <Button className="BasicQuestions-getAnswersButton" onClick={getResults} disabled={progress !== 100}> Get Answers </Button>
         </body>
         <footer className='BasicQuestions-Footer'>
         <Form>

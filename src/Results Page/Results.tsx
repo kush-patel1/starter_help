@@ -3,10 +3,15 @@
 //import { ProgressBar } from '../Progress Bar/ProgressBar';
 import "./Results.css"
 
-export function Results(){
+interface ResultsProps {
+  answers: any[]; // Replace 'any' with a more specific type if possible
+}
+
+export const Results: React.FC<ResultsProps> = ({ answers }) => {
     return(
     <div className="Results">
       <div className="Results-header"/>
+      {answers[1]}
     </div>
   );
  }

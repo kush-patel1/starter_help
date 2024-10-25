@@ -10,6 +10,7 @@ import HomePage from './Home Page/HomePage';
 function App() {
   const [pageVal, setPageVal] = useState<number>(0);
   const [ifLogged, setIfLogged] = useState<boolean>(false);
+  const [answers, setAnswers] = useState(Array(7).fill(''));
 
   //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
   let keyData = "";
@@ -45,7 +46,8 @@ function App() {
     setPageVal(2);
   }
 
-  function resultsClick(){
+  function resultsClick(a: any[]){
+    setAnswers(a);
     setPageVal(3);
   }
 
@@ -69,7 +71,7 @@ function App() {
     return <DetailedQuestions homePage={homeClick} resultsPage={resultsClick} handleSubmit={handleSubmit} changeKey = {changeKey}></DetailedQuestions>;
   }
   else{
-    return <Results/>
+    return <Results answers = {answers}></Results>
   }
 }
 
