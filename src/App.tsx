@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import { Results } from './Results Page/Results';
+import {Results} from './Results Page/Results';
 import BasicQuestions from './Question Pages/basicQuestions';
 import DetailedQuestions from './Question Pages/detailedQuestions';
 import LoggedInPage from './Logged In Page/loggedPage';
@@ -26,7 +26,7 @@ function App() {
     if(key!==""){
     localStorage.setItem(saveKeyData, JSON.stringify(key));
     }
-    //window.location.reload(); //when making a mistake and changing the key again, I found that I have to reload the whole site before openai refreshes what it has stores for the local storage variable
+    window.location.reload(); //when making a mistake and changing the key again, I found that I have to reload the whole site before openai refreshes what it has stores for the local storage variable
   }
 
   //whenever there's a change it'll store the api key in a local state called key but it won't be set in the local storage until the user clicks the submit button
@@ -70,9 +70,11 @@ function App() {
   } else if (pageVal === 2){
     return <DetailedQuestions homePage={homeClick} resultsPage={resultsClick} handleSubmit={handleSubmit} changeKey = {changeKey}></DetailedQuestions>;
   }
-  else{
-    return <Results answers = {answers}></Results>
+  else {
+    // Pass keyData to the Results component as a prop
+    return <Results answers={answers} apiKey={keyData} />;
   }
+  
 }
 
 export default App;
