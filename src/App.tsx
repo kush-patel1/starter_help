@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import {Results} from './Results Page/Results';
+import { Results } from './Results Page/Results';
 import BasicQuestions from './Question Pages/basicQuestions';
 import DetailedQuestions from './Question Pages/detailedQuestions';
 import LoggedInPage from './Logged In Page/loggedPage';
@@ -70,11 +70,9 @@ function App() {
   } else if (pageVal === 2){
     return <DetailedQuestions homePage={homeClick} resultsPage={resultsClick} handleSubmit={handleSubmit} changeKey = {changeKey}></DetailedQuestions>;
   }
-  else {
-    // Pass keyData to the Results component as a prop
-    return <Results answers={answers} apiKey={keyData} />;
+  else{
+    return <Results answers = {answers} apiKey={keyData}></Results>
   }
-  
 }
 
 export default App;
