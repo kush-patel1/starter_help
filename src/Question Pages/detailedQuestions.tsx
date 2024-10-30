@@ -6,10 +6,11 @@ import { ProgressBar } from '../Progress Bar/ProgressBar';
 
 interface QuestionProps {
     homePage: () => void;
-    resultsPage: (answers: any[]) => void;
+    resultsPage: (a: any[]) => void;
     handleSubmit: () => void;
     changeKey: (event: ChangeEvent<HTMLInputElement>) => void;
   }
+
 
 function DetailedQuestions({homePage,resultsPage,handleSubmit,changeKey}: QuestionProps) {
   const totalQuestions = 7;
@@ -27,7 +28,7 @@ function DetailedQuestions({homePage,resultsPage,handleSubmit,changeKey}: Questi
   function getResults(){
     resultsPage(answers);
   }
-
+  
     return (
       <div className='detailedQuestions'>
         <header className='DetailedQuestions-header'>
