@@ -10,6 +10,7 @@ import HomePage from './Home Page/HomePage';
 function App() {
   const [pageVal, setPageVal] = useState<number>(0);
   const [ifLogged, setIfLogged] = useState<boolean>(false);
+  const [answers, setAnswers] = useState(Array(7).fill(''));
 
   //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
   let keyData = "";
@@ -25,7 +26,7 @@ function App() {
     if(key!==""){
     localStorage.setItem(saveKeyData, JSON.stringify(key));
     }
-    //window.location.reload(); //when making a mistake and changing the key again, I found that I have to reload the whole site before openai refreshes what it has stores for the local storage variable
+    window.location.reload(); //when making a mistake and changing the key again, I found that I have to reload the whole site before openai refreshes what it has stores for the local storage variable
   }
 
   //whenever there's a change it'll store the api key in a local state called key but it won't be set in the local storage until the user clicks the submit button
@@ -45,7 +46,8 @@ function App() {
     setPageVal(2);
   }
 
-  function resultsClick(){
+  function resultsClick(a: any[]){
+    setAnswers(a);
     setPageVal(3);
   }
 
@@ -69,7 +71,7 @@ function App() {
     return <DetailedQuestions homePage={homeClick} resultsPage={resultsClick} handleSubmit={handleSubmit} changeKey = {changeKey}></DetailedQuestions>;
   }
   else{
-    return <Results/>
+    return <Results answers = {answers} apiKey={keyData}></Results>
   }
 }
 

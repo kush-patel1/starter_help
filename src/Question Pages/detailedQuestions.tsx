@@ -6,10 +6,11 @@ import { ProgressBar } from '../Progress Bar/ProgressBar';
 
 interface QuestionProps {
     homePage: () => void;
-    resultsPage: () => void;
+    resultsPage: (a: any[]) => void;
     handleSubmit: () => void;
     changeKey: (event: ChangeEvent<HTMLInputElement>) => void;
   }
+
 
 function DetailedQuestions({homePage,resultsPage,handleSubmit,changeKey}: QuestionProps) {
   const totalQuestions = 7;
@@ -24,6 +25,10 @@ function DetailedQuestions({homePage,resultsPage,handleSubmit,changeKey}: Questi
   const answeredQuestions = answers.filter(answer => answer !== '').length;
   const progress = Math.floor((answeredQuestions / totalQuestions) * 100);
 
+  function getResults(){
+    resultsPage(answers);
+  }
+  
     return (
       <div className='detailedQuestions'>
         <header className='DetailedQuestions-header'>
@@ -125,7 +130,7 @@ function DetailedQuestions({homePage,resultsPage,handleSubmit,changeKey}: Questi
               </Form>
             </li>
           </ol>
-          <Button className="DetailedQuestions-getAnswersButton" onClick={resultsPage} disabled={progress !== 100}> Get Answers </Button>
+          <Button className="DetailedQuestions-getAnswersButton" onClick={getResults} disabled={progress !== 100}> Get Answers </Button>
         </body>
         <footer className='DetailedQuestions-footer'>
         <Form>
