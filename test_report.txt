@@ -3,7 +3,7 @@
 > react-scripts test --coverage
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (60 ms)
+  ✕ renders learn react link (46 ms)
 
   ● renders learn react link
 
@@ -34,6 +34,29 @@ FAIL src/App.test.tsx
               [36m>[39m
                 [0mLog In[0m
               [36m</button>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"description"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"picture"[39m
+              [36m>[39m
+                [36m<img[39m
+                  [33malt[39m=[32m"a testing image"[39m
+                  [33msrc[39m=[32m"dudetesting.webp"[39m
+                  [33mstyle[39m=[32m"width: 200px; height: auto;"[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"text"[39m
+              [36m>[39m
+                [36m<h3>[39m
+                  [0mDiscover Your Path with Our Career Quiz[0m
+                [36m</h3>[39m
+                [36m<p>[39m
+                  [0mWelcome to your first step toward finding a career that fits you! Our website offers two quiz options: the Basic Quiz for a quick look at potential career paths, and the Detailed Quiz for a more in-depth exploration of your interests and skills. Whether you're curious about new options or seeking to confirm your direction, these quizzes provide personalized insights to guide your future. Start discovering your path today![0m
+                [36m</p>[39m
+              [36m</div>[39m
             [36m</div>[39m
             [36m<div[39m
               [33mclass[39m=[32m"homeBasicQuestions"[39m
@@ -68,29 +91,6 @@ FAIL src/App.test.tsx
               [36m<p>[39m
                 [0mA thorough personalized career evaluation based on skills, interests, and values[0m
               [36m</p>[39m
-            [36m</div>[39m
-            [36m<div[39m
-              [33mclass[39m=[32m"description"[39m
-            [36m>[39m
-              [36m<div[39m
-                [33mclass[39m=[32m"picture"[39m
-              [36m>[39m
-                [36m<img[39m
-                  [33malt[39m=[32m"a testing image"[39m
-                  [33msrc[39m=[32m"dudetesting.webp"[39m
-                  [33mstyle[39m=[32m"width: 200px; height: auto;"[39m
-                [36m/>[39m
-              [36m</div>[39m
-              [36m<div[39m
-                [33mclass[39m=[32m"text"[39m
-              [36m>[39m
-                [36m<h3>[39m
-                  [0mThis is a header to explain whats going on down below[0m
-                [36m</h3>[39m
-                [36m<p>[39m
-                  [0msample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text [0m
-                [36m</p>[39m
-              [36m</div>[39m
             [36m</div>[39m
             [36m<div[39m
               [33mclass[39m=[32m"footer"[39m
@@ -148,7 +148,7 @@ All files               |   16.52 |    20.58 |    3.84 |   16.81 |
   index.tsx             |       0 |      100 |     100 |       0 | 7-19              
   reportWebVitals.ts    |       0 |        0 |       0 |       0 | 3-10              
  src/Home Page          |   47.05 |     37.5 |      20 |   47.05 |                   
-  HomePage.tsx          |   47.05 |     37.5 |      20 |   47.05 | 27,31-38,42,71    
+  HomePage.tsx          |   47.05 |     37.5 |      20 |   47.05 | 25,29-35,39,71    
  src/Logged In Page     |       0 |        0 |       0 |       0 |                   
   loggedPage.tsx        |       0 |        0 |       0 |       0 | 21-87             
  src/Progress Bar       |       0 |      100 |       0 |       0 |                   
@@ -162,7 +162,7 @@ All files               |   16.52 |    20.58 |    3.84 |   16.81 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.237 s
+Time:        3.2 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
