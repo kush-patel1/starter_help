@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
+import { Button } from 'react-bootstrap';
 import OpenAI from "openai";
 import "./Results.css";
 
 interface ResultsProps {
+  homePage: () => void;
   basicAnswers?: string[];
   detailedAnswers?: string[];
   apiKey: string;
 }
 
-export const Results: React.FC<ResultsProps> = ({ detailedAnswers, basicAnswers, apiKey }) => {
+export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, basicAnswers, apiKey }) => {
   const [careerSuggestions, setCareerSuggestions] = useState<string>("");
+  const [responseGen, setResponseGen] = useState<boolean>(true);
 
   // Define the function to fetch career suggestions
   async function fetchCareerSuggestions() {
@@ -58,12 +61,19 @@ export const Results: React.FC<ResultsProps> = ({ detailedAnswers, basicAnswers,
       setCareerSuggestions(completion.choices[0].message?.content || "No suggestions available.");
     }
   }
-
+  if(responseGen){
+    fetchCareerSuggestions();
+    setResponseGen(false);
+  }
   return (
     <div className="Results">
-      <h2>Career Suggestions</h2>
-      <button onClick={fetchCareerSuggestions}>Get Career Suggestions</button>
-      <div>{careerSuggestions}</div>
+      <header className='Results-header'>
+        <h1>Career Suggestions</h1>
+        <Button className="Home-Button" onClick={homePage}>HOME</Button>
+      </header>
+      <div className='Response'>{careerSuggestions}</div>
     </div>
   );
 };
+
+export default Results;
