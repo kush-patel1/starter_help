@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
+import { Button } from 'react-bootstrap';
 import OpenAI from "openai";
 import "./Results.css";
 
 interface ResultsProps {
-  answers: string[];
+  homePage: () => void;
+  basicAnswers?: string[];
+  detailedAnswers?: string[];
   apiKey: string;
 }
 
-export const Results: React.FC<ResultsProps> = ({ answers, apiKey }) => {
+export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, basicAnswers, apiKey }) => {
   const [careerSuggestions, setCareerSuggestions] = useState<string>("");
+  const [responseGen, setResponseGen] = useState<boolean>(true);
   const [resultForm] = useState<string>("Career 1 name: career 1 description/nCareer 2 name: career 2 description/nCareer 3 name: career 3 description")
   const [career1, setCareer1] = useState<string>("");
   const [career2, setCareer2] = useState<string>("");
@@ -16,6 +20,29 @@ export const Results: React.FC<ResultsProps> = ({ answers, apiKey }) => {
 
   // Define the function to fetch career suggestions
   async function fetchCareerSuggestions() {
+    if (basicAnswers){
+      const openai = new OpenAI({ apiKey: apiKey, dangerouslyAllowBrowser: true });
+      const completion = await openai.chat.completions.create({
+        model: "gpt-4o-mini",
+        messages: [
+          { role: "system", content: "You are a helpful assistant." },
+          {
+            role: "user",
+            content: `This is for a career quiz. You are meant to suggest 3 career options to the user based on their answers to these 7 questions: 
+            1. Do you prefer working indoors or outdoors? 
+            2. Do you enjoy helping others?
+            3. On a scale of 1 to 5, how important is a high salary to you? 
+            4. Would you rather have a job that is routine or varied? 
+            5. Do you prefer working with your hands or technology? 
+            6. Do you like to solve problems or follow instructions 
+            7. Would you rather work in an office or remotely? 
+            Here are the answers to each of the questions in order: ${basicAnswers?.join(', ')}`,
+          },
+        ],
+      });
+      setCareerSuggestions(completion.choices[0].message?.content || "No suggestions available.");
+    }
+    else{
     const openai = new OpenAI({ apiKey: apiKey, dangerouslyAllowBrowser: true });
       const completion = await openai.chat.completions.create({
         model: "gpt-4o-mini",
@@ -31,23 +58,29 @@ export const Results: React.FC<ResultsProps> = ({ answers, apiKey }) => {
             5. In your ideal job, would you rather work on multiple small projects or one large complex task? Why? 
             6. In a team setting, do you prefer taking the lead or supporting others? Why? 
             7. What type of work environment helps you stay motivated and productive? 
-            Here are the answers to each of the questions in order: ${answers.join(', ')}`,
+            Here are the answers to each of the questions in order: ${detailedAnswers?.join(', ')}`,
           },
         ],
       });
       setCareerSuggestions(completion.choices[0].message?.content || "No suggestions available.");
-      setCareer1(careerSuggestions.slice(0,careerSuggestions.indexOf("@")));
-      setCareer2(careerSuggestions.slice(careerSuggestions.indexOf("@")+2,careerSuggestions.lastIndexOf("@")));
-      setCareer3(careerSuggestions.slice(careerSuggestions.lastIndexOf("@")+2));
+    }
   }
-  function returnResults(){
+  if(responseGen){
     fetchCareerSuggestions();
+    setResponseGen(false);
+    setCareer1(careerSuggestions.slice(0,careerSuggestions.indexOf("@")));
+    setCareer2(careerSuggestions.slice(careerSuggestions.indexOf("@")+2,careerSuggestions.lastIndexOf("@")));
+    setCareer3(careerSuggestions.slice(careerSuggestions.lastIndexOf("@")+2));
+  }
   }
 
   return (
     <div className="Results">
-      <h2>Career Suggestions</h2>
-      <button onClick={returnResults}>Get Career Suggestions</button>
+      <header className='Results-header'>
+        <h1>Career Suggestions</h1>
+        <Button className="Home-Button" onClick={homePage}>HOME</Button>
+      </header>
+      <div className='Response'>{careerSuggestions}</div>
       <div>{career1}</div>
       <div>{career2}</div>
       <div>{career3}</div>
@@ -69,3 +102,5 @@ export const Results: React.FC<ResultsProps> = ({ answers, apiKey }) => {
 //   </div>
 // );
 // };
+
+export default Results;
