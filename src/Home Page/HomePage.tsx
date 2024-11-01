@@ -101,7 +101,6 @@ function HomePage({ basicQuestions, detailedQuestions, loggedPage, handleSubmit,
           <button style={{ borderRadius: "5px", marginBottom: "20px" }} onClick={detailedQuestions}>DETAILED</button>
           <p>A thorough personalized career evaluation based on skills, interests, and values</p>
         </div>
-
       </div>
 
       <div className="footer">
