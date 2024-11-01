@@ -6,26 +6,26 @@ import { ProgressBar } from '../Progress Bar/ProgressBar';
 
 interface QuestionProps {
     homePage: () => void;
-    resultsPage: (a: any[]) => void;
+    resultsPage: (basicAnswers?: any[], detailedAnswers?: any[]) => void;
     handleSubmit: () => void;
     changeKey: (event: ChangeEvent<HTMLInputElement>) => void;
   }
 
 function BasicQuestions({homePage,resultsPage,handleSubmit,changeKey}: QuestionProps){
     const totalQuestions = 7;
-    const [answers, setAnswers] = useState(Array(totalQuestions).fill(''));
+    const [basicAnswers, setBasicAnswers] = useState(Array(totalQuestions).fill(''));
 
     const handleAnswerChange = (index: number, value: string) => {
-        const updatedAnswers = [...answers];
+        const updatedAnswers = [...basicAnswers];
         updatedAnswers[index] = value;
-        setAnswers(updatedAnswers);
+        setBasicAnswers(updatedAnswers);
       };
 
-    const answeredQuestions = answers.filter(answer => answer !== '').length;
+    const answeredQuestions = basicAnswers.filter(basicAnswers => basicAnswers !== '').length;
     const progress = Math.floor((answeredQuestions / totalQuestions) * 100);
     
     function getResults(){
-        resultsPage(answers);
+        resultsPage(undefined, basicAnswers);
       }
 
     return (<div className='BasicQuestions'>

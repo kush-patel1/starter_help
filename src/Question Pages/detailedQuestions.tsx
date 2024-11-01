@@ -6,7 +6,7 @@ import { ProgressBar } from '../Progress Bar/ProgressBar';
 
 interface QuestionProps {
     homePage: () => void;
-    resultsPage: (a: any[]) => void;
+    resultsPage: (detailedAnswers?: any[], basicAnswers?: any[]) => void;
     handleSubmit: () => void;
     changeKey: (event: ChangeEvent<HTMLInputElement>) => void;
   }
@@ -14,21 +14,21 @@ interface QuestionProps {
 
 function DetailedQuestions({homePage,resultsPage,handleSubmit,changeKey}: QuestionProps) {
   const totalQuestions = 7;
-  const [answers, setAnswers] = useState(Array(totalQuestions).fill(''));
+  const [detailedAnswers, setDetailedAnswers] = useState(Array(totalQuestions).fill(''));
 
   const handleAnswerChange = (index: number, value: string) => {
-    const updatedAnswers = [...answers];
+    const updatedAnswers = [...detailedAnswers];
     updatedAnswers[index] = value;
-    setAnswers(updatedAnswers);
+    setDetailedAnswers(updatedAnswers);
   };
 
-  const answeredQuestions = answers.filter(answer => answer !== '').length;
+  const answeredQuestions = detailedAnswers.filter(detailedAnswers => detailedAnswers !== '').length;
   const progress = Math.floor((answeredQuestions / totalQuestions) * 100);
 
   function getResults(){
-    resultsPage(answers);
+    resultsPage(detailedAnswers, undefined);
   }
-  
+
     return (
       <div className='detailedQuestions'>
         <header className='DetailedQuestions-header'>
@@ -46,7 +46,7 @@ function DetailedQuestions({homePage,resultsPage,handleSubmit,changeKey}: Questi
                   <textarea
                   className='DetailedQuestions-textArea'
                   name="answer1"
-                  value={answers[0]}
+                  value={detailedAnswers[0]}
                   onChange={(event) => handleAnswerChange(0, event.target.value)}/>
                 </label>
               </Form>
@@ -58,7 +58,7 @@ function DetailedQuestions({homePage,resultsPage,handleSubmit,changeKey}: Questi
                   <textarea
                     className='DetailedQuestions-textArea'
                     name="answer2"
-                    value={answers[1]}
+                    value={detailedAnswers[1]}
                     onChange={(event) => handleAnswerChange(1, event.target.value)}
                   />
                 </label>
@@ -71,7 +71,7 @@ function DetailedQuestions({homePage,resultsPage,handleSubmit,changeKey}: Questi
                   <textarea
                     className='DetailedQuestions-textArea'
                     name="answer3"
-                    value={answers[2]}
+                    value={detailedAnswers[2]}
                     onChange={(event) => handleAnswerChange(2, event.target.value)}
                   />
                 </label>
@@ -84,7 +84,7 @@ function DetailedQuestions({homePage,resultsPage,handleSubmit,changeKey}: Questi
                   <textarea
                     className='DetailedQuestions-textArea'
                     name="answer4"
-                    value={answers[3]}
+                    value={detailedAnswers[3]}
                     onChange={(event) => handleAnswerChange(3, event.target.value)}
                   />
                 </label>
@@ -97,7 +97,7 @@ function DetailedQuestions({homePage,resultsPage,handleSubmit,changeKey}: Questi
                   <textarea
                     className='DetailedQuestions-textArea'
                     name="answer5"
-                    value={answers[4]}
+                    value={detailedAnswers[4]}
                     onChange={(event) => handleAnswerChange(4, event.target.value)}
                   />
                 </label>
@@ -110,7 +110,7 @@ function DetailedQuestions({homePage,resultsPage,handleSubmit,changeKey}: Questi
                   <textarea
                     className='DetailedQuestions-textArea'
                     name="answer6"
-                    value={answers[5]}
+                    value={detailedAnswers[5]}
                     onChange={(event) => handleAnswerChange(5, event.target.value)}
                   />
                 </label>
@@ -123,7 +123,7 @@ function DetailedQuestions({homePage,resultsPage,handleSubmit,changeKey}: Questi
                   <textarea
                     className='DetailedQuestions-textArea'
                     name="answer7"
-                    value={answers[6]}
+                    value={detailedAnswers[6]}
                     onChange={(event) => handleAnswerChange(6, event.target.value)}
                   />
                 </label>
