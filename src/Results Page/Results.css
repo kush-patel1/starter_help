@@ -4,7 +4,7 @@
   
   .Results-header {
     background-color: #0036a2;
-    min-height: 50px;
+    min-height: 10vh;
     width:100%;
     display: flex;
     flex-direction: column;
@@ -12,4 +12,12 @@
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
+  }
+  .GetCareerSuggestions{
+    align-content: center;
+    min-height: 40px;
+  }
+  .Response{
+    align-content: center;
+    font-size: calc(10px + 2vmin);
   }

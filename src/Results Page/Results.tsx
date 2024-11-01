@@ -33,12 +33,12 @@ export const Results: React.FC<ResultsProps> = ({ answers, apiKey }) => {
       });
       setCareerSuggestions(completion.choices[0].message?.content || "No suggestions available.");
   }
-
+  fetchCareerSuggestions();
   return (
     <div className="Results">
-      <h2>Career Suggestions</h2>
-      <button onClick={fetchCareerSuggestions}>Get Career Suggestions</button>
-      <div>{careerSuggestions}</div>
+      <h2 className='Results-header'>Career Suggestions</h2>
+      <button className='GetCareerSuggestions' onClick={fetchCareerSuggestions}>Get Career Suggestions</button>
+      <div className='Response'>{careerSuggestions}</div>
     </div>
   );
 };
