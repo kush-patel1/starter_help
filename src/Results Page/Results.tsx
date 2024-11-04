@@ -35,11 +35,15 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
             5. In your ideal job, would you rather work on multiple small projects or one large complex task? Why? 
             6. In a team setting, do you prefer taking the lead or supporting others? Why? 
             7. What type of work environment helps you stay motivated and productive? 
-            Here are the answers to each of the questions in order: ${answers.join(', ')}`,
+            Here are the answers to each of the questions in order: ${basicAnswers.join(', ')}`,
           },
         ],
       });
-      setCareerSuggestions(completion.choices[0].message?.content || "No suggestions available.");
+      const suggestions = completion.choices[0].message?.content || "No suggestions available.";
+      setCareerSuggestions(suggestions);
+      setCareer1(suggestions.slice(0, suggestions.indexOf("@")).trim());
+      setCareer2(suggestions.slice(suggestions.indexOf("@") + 2, suggestions.lastIndexOf("@")).trim());
+      setCareer3(suggestions.slice(suggestions.lastIndexOf("@") + 2).trim());
     }
     else{
     const openai = new OpenAI({ apiKey: apiKey, dangerouslyAllowBrowser: true });
@@ -61,10 +65,11 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
           },
         ],
       });
-      setCareerSuggestions(completion.choices[0].message?.content || "No suggestions available.");
-      setCareer1(careerSuggestions.slice(0,careerSuggestions.indexOf("@")));
-      setCareer2(careerSuggestions.slice(careerSuggestions.indexOf("@")+2,careerSuggestions.lastIndexOf("@")));
-      setCareer3(careerSuggestions.slice(careerSuggestions.lastIndexOf("@")+2));
+      const suggestions = completion.choices[0].message?.content || "No suggestions available.";
+      setCareerSuggestions(suggestions);
+      setCareer1(suggestions.slice(0, suggestions.indexOf("@")).trim());
+      setCareer2(suggestions.slice(suggestions.indexOf("@") + 2, suggestions.lastIndexOf("@")).trim());
+      setCareer3(suggestions.slice(suggestions.lastIndexOf("@") + 2).trim());
     }
   }
   if(responseGen){
@@ -78,10 +83,9 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
         <h1>Career Suggestions</h1>
         <Button className="Home-Button" onClick={homePage}>HOME</Button>
       </header>
-      <div className='Response'>{careerSuggestions}</div>
-      <div>{career1}</div>
-      <div>{career2}</div>
-      <div>{career3}</div>
+      <div className='Response'>{career1}</div>
+      <div className='Response'>{career2}</div>
+      <div className='Response'>{career3}</div>
     </div>
   );
 }
