@@ -83,13 +83,22 @@ position: "fixed", width: "100%"}}*/
 }
 
 .picture{
-    margin-left:10%;
-    width: 20%;
+    margin-top: .5%;
+    margin-left: 10%;
+    margin-right: 5%;
+    width: 13.35%;
+    height: 35%;
+    border: 2px solid black;
+    object-fit: cover;
 }
 
 .text{
     flex:1;
     margin-right:10%;
+    border: 2px solid black;
+    padding: 20px;
+    background-color: #4DA6FF;
+    border-radius: 15px;
 }
 
 .API-form{

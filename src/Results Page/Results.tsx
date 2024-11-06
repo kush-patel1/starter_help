@@ -65,6 +65,11 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
     fetchCareerSuggestions();
     setResponseGen(false);
   }
+  
+
+
+
+
   return (
     <div className="Results">
       <header className='Results-header'>
