@@ -27,7 +27,7 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
           { role: "system", content: "You are a career suggestion expert. When giving career suggestions, you do not include *s. For each career option, provide a title for the career, a colon, and then a description. Between career options, you leave a line worth of space and a @ symbol." },
           {
             role: "user",
-            content: `This is for a career quiz. You are meant to suggest 3 career options, each on their own line, to the user based on their answers to these 7 questions: 
+            content: `This is for a career quiz. You are meant to suggest 3 career options in order based on which suggestion is the best fit, each on their own line, to the user based on their answers to these 7 questions: 
             1. Do you prefer managing projects or executing tasks? Why? 
             2. How do you balance job satisfaction with financial stability when considering a career? 
             3. Do you prefer working in established industries or emerging fields? Why? 
@@ -61,12 +61,25 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
             5. In your ideal job, would you rather work on multiple small projects or one large complex task? Why? 
             6. In a team setting, do you prefer taking the lead or supporting others? Why? 
             7. What type of work environment helps you stay motivated and productive? 
-            Here are the answers to each of the questions in order: ${detailedAnswers?.join(', ')}`,
+            Here are the answers to each of the questions in order: ${detailedAnswers?.join(', ')}
+            If any of the answers do not make sense or do not seem like answers to the questions, instead respond with "The answers are invalid, please answer the questions."`,
           },
         ],
       });
       const suggestions = completion.choices[0].message?.content || "No suggestions available.";
       //setCareerSuggestions(suggestions);
+      if(suggestions === "The answers are invalid, please answer the questions."){
+        setCareer1(suggestions);
+        return (
+          <div className="Results">
+            <header className='Results-header'>
+              <h1>Career Suggestions</h1>
+              <Button className="Home-Button" onClick={homePage}>HOME</Button>
+            </header>
+            <div className='Response'>{career1}</div>
+          </div>
+        );
+      }
       setCareer1(suggestions.slice(0, suggestions.indexOf("@")).trim());
       setCareer2(suggestions.slice(suggestions.indexOf("@") + 2, suggestions.lastIndexOf("@")).trim());
       setCareer3(suggestions.slice(suggestions.lastIndexOf("@") + 2).trim());
