@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import OpenAI from "openai";
 import "./Results.css";
+import loadingSymbol from "./LoadingSymbol.gif";
 
 interface ResultsProps {
   homePage: () => void;
@@ -100,6 +101,7 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
       <div className='Response'>{career2Desc}</div>
       <h2 style={{float: "left", paddingLeft: "30px", paddingTop: "30px"}}>{career3Name}</h2>
       <div className='Response'>{career3Desc}</div>
+
     </div>
   );
 }
