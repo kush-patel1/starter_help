@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import OpenAI from "openai";
 import "./Results.css";
+import loadingSymbol from "./LoadingSymbol.gif";
 
 interface ResultsProps {
   homePage: () => void;
@@ -71,7 +72,7 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
         <h1>Career Suggestions</h1>
         <Button className="Home-Button" onClick={homePage}>HOME</Button>
       </header>
-      <div className='Response'>{careerSuggestions}</div>
+      <div className='Response'>{careerSuggestions ? careerSuggestions : <img src={loadingSymbol} alt="Loading..."/>}</div>
     </div>
   );
 };
