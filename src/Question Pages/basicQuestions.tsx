@@ -48,7 +48,9 @@ function BasicQuestions({homePage,resultsPage,handleSubmit,changeKey}: QuestionP
                             value="Indoors"
                             onChange={(event) => handleAnswerChange(0, event.target.value)}/>
                              Indoors
-                            <input 
+                        </label>
+                        <label>
+                        <input 
                             className='BasicQuestions-MultipleChoice'
                             type="radio" 
                             name="answer1"
@@ -69,7 +71,9 @@ function BasicQuestions({homePage,resultsPage,handleSubmit,changeKey}: QuestionP
                             value="Yes"
                             onChange={(event) => handleAnswerChange(1, event.target.value)}/>
                              Yes
-                            <input 
+                        </label>
+                        <label>
+                        <input 
                             className='BasicQuestions-MultipleChoice'
                             type="radio" 
                             name="answer2"
@@ -90,27 +94,35 @@ function BasicQuestions({homePage,resultsPage,handleSubmit,changeKey}: QuestionP
                             value="1"
                             onChange={(event) => handleAnswerChange(2, event.target.value)}/>
                              1
-                             <input 
+                        </label>
+                        <label>
+                        <input 
                             className='BasicQuestions-MultipleChoice'
                             type="radio" 
                             name="answer3"
                             value="2"
                             onChange={(event) => handleAnswerChange(2, event.target.value)}/>
                              2
-                             <input 
+                        </label>
+                        <label>
+                        <input 
                             className='BasicQuestions-MultipleChoice'
                             type="radio" 
                             name="answer3"
                             value="3"
                             onChange={(event) => handleAnswerChange(2, event.target.value)}/>
                              3
-                             <input 
+                        </label>
+                        <label>
+                        <input 
                             className='BasicQuestions-MultipleChoice'
                             type="radio" 
                             name="answer3"
                             value="4"
                             onChange={(event) => handleAnswerChange(2, event.target.value)}/>
                              4
+                        </label>
+                        <label>
                              <input 
                             className='BasicQuestions-MultipleChoice'
                             type="radio" 
@@ -132,6 +144,8 @@ function BasicQuestions({homePage,resultsPage,handleSubmit,changeKey}: QuestionP
                             value="Routine"
                             onChange={(event) => handleAnswerChange(3, event.target.value)}/>
                              Routine
+                        </label>
+                        <label>
                             <input 
                             className='BasicQuestions-MultipleChoice'
                             type="radio" 
@@ -153,6 +167,8 @@ function BasicQuestions({homePage,resultsPage,handleSubmit,changeKey}: QuestionP
                             value="Hands"
                             onChange={(event) => handleAnswerChange(4, event.target.value)}/>
                              Hands
+                        </label>
+                        <label>
                             <input 
                             className='BasicQuestions-MultipleChoice'
                             type="radio" 
@@ -174,6 +190,8 @@ function BasicQuestions({homePage,resultsPage,handleSubmit,changeKey}: QuestionP
                             value="Solving Problems"
                             onChange={(event) => handleAnswerChange(5, event.target.value)}/>
                              Solving Problems
+                        </label>
+                        <label>
                             <input 
                             className='BasicQuestions-MultipleChoice'
                             type="radio"
@@ -195,6 +213,8 @@ function BasicQuestions({homePage,resultsPage,handleSubmit,changeKey}: QuestionP
                             value="Office"
                             onChange={(event) => handleAnswerChange(6, event.target.value)}/>
                              Office
+                        </label>
+                        <label>
                             <input 
                             className='BasicQuestions-MultipleChoice'
                             type="radio" 
