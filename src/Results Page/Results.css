@@ -1,6 +1,4 @@
-.Results {
-    text-align: center;
-  }
+
   
   .Results-header {
     background-color: #0036a2;
@@ -16,12 +14,9 @@
   .Results-Header h1 {
     font-weight:600;
   }
-  .GetCareerSuggestions{
-    align-content: center;
-    min-height: 40px;
-  }
+ 
   .Response{
-    align-content: center;
+    padding-left: 30px;
+    float: left;
     font-size: calc(10px + 2vmin);
-    padding: 25px;
   }
