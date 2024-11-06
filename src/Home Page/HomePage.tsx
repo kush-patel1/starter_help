@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import TestingImage from "./dudetesting.webp";
 import LogoImage from "./reactlogo.png";
 import './HomePage.css';
