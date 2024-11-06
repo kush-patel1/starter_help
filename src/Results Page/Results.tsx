@@ -11,7 +11,7 @@ interface ResultsProps {
 }
 
 export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, basicAnswers, apiKey }) => {
-  const [careerSuggestions, setCareerSuggestions] = useState<string>("");
+  //const [careerSuggestions, setCareerSuggestions] = useState<string>("");
   const [responseGen, setResponseGen] = useState<boolean>(true);
   const [career1, setCareer1] = useState<string>("");
   const [career2, setCareer2] = useState<string>("");
@@ -40,7 +40,7 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
         ],
       });
       const suggestions = completion.choices[0].message?.content || "No suggestions available.";
-      setCareerSuggestions(suggestions);
+      //setCareerSuggestions(suggestions);
       setCareer1(suggestions.slice(0, suggestions.indexOf("@")).trim());
       setCareer2(suggestions.slice(suggestions.indexOf("@") + 2, suggestions.lastIndexOf("@")).trim());
       setCareer3(suggestions.slice(suggestions.lastIndexOf("@") + 2).trim());
@@ -66,7 +66,7 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
         ],
       });
       const suggestions = completion.choices[0].message?.content || "No suggestions available.";
-      setCareerSuggestions(suggestions);
+      //setCareerSuggestions(suggestions);
       setCareer1(suggestions.slice(0, suggestions.indexOf("@")).trim());
       setCareer2(suggestions.slice(suggestions.indexOf("@") + 2, suggestions.lastIndexOf("@")).trim());
       setCareer3(suggestions.slice(suggestions.lastIndexOf("@") + 2).trim());
