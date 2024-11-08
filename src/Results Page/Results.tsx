@@ -97,12 +97,13 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
         <h1>Career Suggestions</h1>
         <Button className="Home-Button" onClick={homePage}>HOME</Button>
       </header>
+      { career1Desc && career2Desc && career3Desc ? <p>
       <h2 style={{float: "left", paddingLeft: "30px", paddingTop: "30px"}}>{career1Name}</h2>
       <div className='Response'>{career1Desc}</div>
       <h2 style={{float: "left", paddingLeft: "30px", paddingTop: "30px"}}>{career2Name}</h2>
       <div className='Response'>{career2Desc}</div>
       <h2 style={{float: "left", paddingLeft: "30px", paddingTop: "30px"}}>{career3Name}</h2>
-      <div className='Response'>{career3Desc}</div>
+      <div className='Response'>{career3Desc}</div></p> : <img src={loadingSymbol} alt="Loading..."/>}
 
     </div>
   );
