@@ -24,17 +24,17 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
       const completion = await openai.chat.completions.create({
         model: "gpt-4o-mini",
         messages: [
-          { role: "system", content: "You are a career suggestion expert. When giving career suggestions, you do not include *s. For each career option, provide a title for the career, a colon, and then a description. Between career options, you leave a line worth of space and a @ symbol." },
+          { role: "system", content: "You are a career suggestion expert. You give suggestions from all fields and levels. When giving career suggestions, you do not include *s. For each career option, provide a title for the career, a colon, and then a description. Between career options, you leave an @ symbol." },
           {
             role: "user",
             content: `This is for a career quiz. You are meant to suggest 3 career options in order based on which suggestion is the best fit, each on their own line, to the user based on their answers to these 7 questions: 
-            1. Do you prefer managing projects or executing tasks? Why? 
-            2. How do you balance job satisfaction with financial stability when considering a career? 
-            3. Do you prefer working in established industries or emerging fields? Why? 
-            4. When considering a career change, what factors play the biggest role for you? 
-            5. In your ideal job, would you rather work on multiple small projects or one large complex task? Why? 
-            6. In a team setting, do you prefer taking the lead or supporting others? Why? 
-            7. What type of work environment helps you stay motivated and productive? 
+            1. Do you prefer working indoors or outdoors?
+            2. Do you enjoy helping others?
+            3. On a scale of 1 to 5, how important is a high salary to you?
+            4. Would you rather have a job that is routine or varied?
+            5. Do you prefer working with your hands or technology?
+            6. Do you like to solve problems or follow instructions
+            7. Would you rather work in an office or remotely?
             Here are the answers to each of the questions in order: ${basicAnswers.join(', ')}`,
           },
         ],
@@ -50,7 +50,7 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
       const completion = await openai.chat.completions.create({
         model: "gpt-4o-mini",
         messages: [
-          { role: "system", content: "You are a career suggestion expert. When giving career suggestions, you do not include *s. For each career option, provide a title for the career, a colon, and then a description. Between career options, you leave a line worth of space and a @ symbol." },
+          { role: "system", content: "You are a career suggestion expert. You give suggestions from all fields and everywhere from chef to garbage man to project manager at a tech company. When giving career suggestions, you do not include *s. For each career option, provide a title for the career, a colon, and then a description. Between career options, you leave an @ symbol." },
           {
             role: "user",
             content: `This is for a career quiz. You are meant to suggest 3 career options, each on their own line, to the user based on their answers to these 7 questions: 
