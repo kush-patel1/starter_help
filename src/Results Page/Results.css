@@ -1,6 +1,4 @@
-
-  
-  .Results-header {
+.Results-header {
     background-color: #0036a2;
     min-height: 10vh;
     width:100%;
@@ -15,8 +13,31 @@
     font-weight:600;
   }
  
-  .Response{
+  .Container {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .TextContainer {
     padding-left: 30px;
-    float: left;
     font-size: calc(10px + 2vmin);
+    flex: 1;
+  }
+  
+  .Pie {
+    height: 200px;
+    width: 200px;
+    margin-left: 30px;
+    padding-top: 30px;
+  }
+
+  .PerMatch {
+    text-align: center;
+  }
+
+  .Gauge {
+    width: 200px;
+    height: 200px;
+    margin-left: 30px;
+    padding-top: 30px;
   }
