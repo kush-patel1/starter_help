@@ -39,7 +39,8 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
             5. In your ideal job, would you rather work on multiple small projects or one large complex task? Why? 
             6. In a team setting, do you prefer taking the lead or supporting others? Why? 
             7. What type of work environment helps you stay motivated and productive? 
-            Here are the answers to each of the questions in order: ${basicAnswers.join(', ')}`,
+            Here are the answers to each of the questions in order: ${basicAnswers.join(', ')}
+            For each suggestion, provide a link to a website where the user can seek out the suggestion.`,
           },
         ],
       });
@@ -65,7 +66,8 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
             5. In your ideal job, would you rather work on multiple small projects or one large complex task? Why? 
             6. In a team setting, do you prefer taking the lead or supporting others? Why? 
             7. What type of work environment helps you stay motivated and productive? 
-            Here are the answers to each of the questions in order: ${detailedAnswers?.join(', ')}`,
+            Here are the answers to each of the questions in order: ${detailedAnswers?.join(', ')}
+            For each suggestion, provide a link to a website where the user can seek out the suggestion.`,
           },
         ],
       });
@@ -142,6 +144,7 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
         <h1>Career Suggestions</h1>
         <Button className="Home-Button" onClick={homePage}>HOME</Button>
       </header>
+      { career1Desc && career2Desc && career3Desc ? <p>
       <div className="Container">
         <div className="TextContainer">
           <h2 style={{ paddingTop: "30px" }}>{career1Name}</h2>
@@ -177,7 +180,7 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
           </div>
           <h4>{career3Perc}% Match</h4>
         </div>
-      </div>
+      </div></p> : <img src={loadingSymbol} alt="Loading..."/>}
     </div>
   );
 }
