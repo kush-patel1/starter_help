@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import OpenAI from "openai";
 import "./Results.css";
+import loadingSymbol from "./LoadingSymbol.gif";
 
 interface ResultsProps {
   homePage: () => void;
@@ -35,7 +36,8 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
             5. Do you prefer working with your hands or technology?
             6. Do you like to solve problems or follow instructions
             7. Would you rather work in an office or remotely?
-            Here are the answers to each of the questions in order: ${basicAnswers.join(', ')}`,
+            Here are the answers to each of the questions in order: ${basicAnswers.join(', ')}
+            For each suggestion, provide a link to a website where the user can seek out the suggestion.`,
           },
         ],
       });
@@ -62,7 +64,8 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
             6. In a team setting, do you prefer taking the lead or supporting others? Why? 
             7. What type of work environment helps you stay motivated and productive? 
             Here are the answers to each of the questions in order: ${detailedAnswers?.join(', ')}
-            If any of the answers do not make sense or do not seem like answers to the questions, instead respond with "The answers are invalid, please answer the questions."`,
+            If any of the answers do not make sense or do not seem like answers to the questions, instead respond with "The answers are invalid, please answer the questions.",
+            For each suggestion, provide a link to a website where the user can seek out the suggestion.`,
           },
         ],
       });
@@ -90,15 +93,31 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
     setResponseGen(false);
   }
 
+
+
+  let career1Name = career1.split(":")[0] || "";
+  let career1Desc = career1.slice(career1.indexOf(":") + 1).trim();
+
+  let career2Name = career2.split(":")[0] || "";
+  let career2Desc = career2.slice(career2.indexOf(":") + 1).trim();
+
+  let career3Name = career3.split(":")[0] || "";
+  let career3Desc = career3.slice(career3.indexOf(":") + 1).trim();
+
   return (
     <div className="Results">
       <header className='Results-header'>
         <h1>Career Suggestions</h1>
         <Button className="Home-Button" onClick={homePage}>HOME</Button>
       </header>
-      <div className='Response'>{career1}</div>
-      <div className='Response'>{career2}</div>
-      <div className='Response'>{career3}</div>
+      { career1Desc && career2Desc && career3Desc ? <p>
+      <h2 style={{float: "left", paddingLeft: "30px", paddingTop: "30px"}}>{career1Name}</h2>
+      <div className='Response'>{career1Desc}</div>
+      <h2 style={{float: "left", paddingLeft: "30px", paddingTop: "30px"}}>{career2Name}</h2>
+      <div className='Response'>{career2Desc}</div>
+      <h2 style={{float: "left", paddingLeft: "30px", paddingTop: "30px"}}>{career3Name}</h2>
+      <div className='Response'>{career3Desc}</div></p> : <img src={loadingSymbol} alt="Loading..."/>}
+
     </div>
   );
 }

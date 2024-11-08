@@ -34,36 +34,38 @@ function LoggedInPage({basicQuestions,detailedQuestions,handleSubmit,changeKey}:
                 <h1 style={{ flex: 1, textAlign: "center", marginRight: "7px"}}>Home Page</h1>
                 <button style={{ borderRadius: "5px" }} onClick={homeClick}>Log Out</button>
             </div>
-            <div>
-                <h2 style={{padding: "20px"}}>Welcome Back {latestUsername}!</h2>
-            </div>
-            <div className="logged-homeBasicQuestions">
-            <h4 style={{marginBottom: "20px"}}>Basic Questions</h4>
-            <button style={{borderRadius: "5px", marginBottom: "20px"}} onClick={basicQuestions}>BASIC</button>
-            <p>A brief overview providing broad career suggestions based on key interests on a surface level</p>
-            </div>
-            <div className="logged-homeDetailedQuestions">
-            <h4 style={{marginBottom: "20px"}}>Detailed Questions</h4>
-            <button style={{borderRadius: "5px", marginBottom: "20px"}} onClick={detailedQuestions}>DETAILED</button>
-            <p>A thorough personalized career evaluation based on skills, interests, and values</p>
-            </div>
-            <div className="logged-viewResults">
-                <h4 style={{marginBottom: "20px"}}>View Previous Quizzes</h4>
-                <button style={{borderRadius: "5px", marginBottom: "20px"}} onClick={basicQuestions}>RESULTS</button>
-                <p>Look at previous career quiz reports and job advice from any tests taken in the past</p>
-            </div>
-            <div className="logged-text">
-                <h3>Matched with Example Job</h3>
-                <div className="logged-desc">
-                    <p>some more sample text basically summarizing what the job is and some cool information about it some more sample text basically summarizing what the job is and some cool information about it x2 just typing a little more because it will look good</p>
+            <div className="content">
+                <div>
+                    <h2 style={{padding: "20px"}}>Welcome Back {latestUsername}!</h2>
                 </div>
-            </div>
-            <img src={TestingImage} alt="a testing image" style={{width: "325px", height: "auto", padding: "30px", marginLeft: "40px", marginTop: "20px"}}></img>
-            <div className="logged-text2">
-                <h3>Matched with Example Industry</h3>
-                <div className="logged-desc2">
-                    <p>some more sample text basically summarizing what the job is and some cool information about it some more sample text basically summarizing what the job is and some cool information about it x2 just typing a little more because it will look good</p>
+                <div className="logged-homeBasicQuestions">
+                <h4 style={{marginBottom: "20px"}}>Basic Questions</h4>
+                <button style={{borderRadius: "5px", marginBottom: "20px"}} onClick={basicQuestions}>BASIC</button>
+                <p>A brief overview providing broad career suggestions based on key interests on a surface level</p>
                 </div>
+                <div className="logged-homeDetailedQuestions">
+                <h4 style={{marginBottom: "20px"}}>Detailed Questions</h4>
+                <button style={{borderRadius: "5px", marginBottom: "20px"}} onClick={detailedQuestions}>DETAILED</button>
+                <p>A thorough personalized career evaluation based on skills, interests, and values</p>
+                </div>
+                <div className="logged-viewResults">
+                    <h4 style={{marginBottom: "20px"}}>View Previous Quizzes</h4>
+                    <button style={{borderRadius: "5px", marginBottom: "20px"}} onClick={basicQuestions}>RESULTS</button>
+                    <p>Look at previous career quiz reports and job advice from any tests taken in the past</p>
+                </div>
+                <div className="logged-text">
+                    <h3>Matched with Example Job</h3>
+                    <div className="logged-desc">
+                        <p>some more sample text basically summarizing what the job is and some cool information about it some more sample text basically summarizing what the job is and some cool information about it x2 just typing a little more because it will look good</p>
+                    </div>
+                </div>
+                <img src={TestingImage} alt="a testing image" style={{width: "325px", height: "auto", padding: "30px", marginLeft: "40px", marginTop: "20px"}}></img>
+                <div className="logged-text2">
+                    <h3>Matched with Example Industry</h3>
+                    <div className="logged-desc2">
+                        <p>some more sample text basically summarizing what the job is and some cool information about it some more sample text basically summarizing what the job is and some cool information about it x2 just typing a little more because it will look good</p>
+                    </div>
+            </div>
             </div>
             <div className="logged-footer">
             <Form>
