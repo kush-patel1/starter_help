@@ -40,7 +40,7 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
             6. In a team setting, do you prefer taking the lead or supporting others? Why? 
             7. What type of work environment helps you stay motivated and productive? 
             Here are the answers to each of the questions in order: ${basicAnswers.join(', ')}
-            For each suggestion, provide a link to a website where the user can seek out the suggestion.`,
+            For each suggestion, provide a link to a website where the user can seek out the suggestion. Ensure the link is the only thing in parentheses.`,
           },
         ],
       });
@@ -67,7 +67,7 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
             6. In a team setting, do you prefer taking the lead or supporting others? Why? 
             7. What type of work environment helps you stay motivated and productive? 
             Here are the answers to each of the questions in order: ${detailedAnswers?.join(', ')}
-            For each suggestion, provide a link to a website where the user can seek out the suggestion.`,
+            For each suggestion, provide a link to a website where the user can seek out the suggestion. Ensure the link is the only thing in parentheses.`,
           },
         ],
       });
@@ -88,16 +88,19 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
   let career3Perc = parseInt(career3.slice(career3.length - 3, career3.length - 1));
 
   let career1Name = career1.split(":")[0] || "";
-  let career1Desc = career1.slice(career1.indexOf(":") + 1).trim();
-  career1Desc = career1Desc.slice(0, career1Desc.length - 4);
-
+  let career1Desc = career1.slice(career1.indexOf(":") + 1, career1.indexOf("(")).trim();
+  let career1Link = career1.slice(career1.indexOf("(") + 1, career1.indexOf(")")).trim();
+  //career1Desc = career1Desc.slice(0, career1Desc.length - 4);
+        
   let career2Name = career2.split(":")[0] || "";
-  let career2Desc = career2.slice(career2.indexOf(":") + 1).trim();
-  career2Desc = career2Desc.slice(0, career2Desc.length - 4);
-
+  let career2Desc = career2.slice(career2.indexOf(":") + 1, career2.indexOf("(")).trim();
+  let career2Link = career2.slice(career2.indexOf("(") + 1, career2.indexOf(")")).trim();
+  //career2Desc = career2Desc.slice(0, career2Desc.length - 4);
+        
   let career3Name = career3.split(":")[0] || "";
-  let career3Desc = career3.slice(career3.indexOf(":") + 1).trim();
-  career3Desc = career3Desc.slice(0, career3Desc.length - 4);
+  let career3Desc = career3.slice(career3.indexOf(":") + 1, career3.indexOf("(")).trim();
+  let career3Link = career3.slice(career3.indexOf("(") + 1, career3.indexOf(")")).trim();
+  //career3Desc = career3Desc.slice(0, career3Desc.length - 4);
 
   ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -137,7 +140,6 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
     ],
   };
 
-
   return (
     <div className="Results"> 
       <header className='Results-header'>
@@ -148,7 +150,7 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
       <div className="Container">
         <div className="TextContainer">
           <h2 style={{ paddingTop: "30px" }}>{career1Name}</h2>
-          <div className="Response">{career1Desc}</div>
+          <div className="Response">{career1Desc}<a href={career1Link}>{career1Link}</a></div>
         </div>
         <div className="PerMatch">
           <div className="Gauge">
@@ -160,7 +162,7 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
       <div className="Container">
         <div className="TextContainer">
           <h2 style={{ paddingTop: "30px" }}>{career2Name}</h2>
-          <div className="Response">{career2Desc}</div>
+          <div className="Response">{career2Desc}<a href={career2Link}>{career2Link}</a></div>
         </div>
         <div className="PerMatch">
           <div className="Gauge">
@@ -172,7 +174,7 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
       <div className="Container">
         <div className="TextContainer">
           <h2 style={{ paddingTop: "30px" }}>{career3Name}</h2>
-          <div className="Response">{career3Desc}</div>
+          <div className="Response">{career3Desc}<a href={career3Link}>{career3Link}</a></div>
         </div>
         <div className="PerMatch">
           <div className="Gauge">
