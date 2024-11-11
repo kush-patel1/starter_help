@@ -20,3 +20,15 @@
     float: left;
     font-size: calc(10px + 2vmin);
   }
+
+  .loading-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh; /* Adjust to control vertical centering */
+  }
+  
+  .loading-symbol {
+    width: 1000px; /* Adjust size if needed */
+    height: 600px;
+  }
