@@ -37,7 +37,7 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
             6. In a team setting, do you prefer taking the lead or supporting others? Why? 
             7. What type of work environment helps you stay motivated and productive? 
             Here are the answers to each of the questions in order: ${basicAnswers.join(', ')}
-            For each suggestion, provide a link to a website where the user can seek out the suggestion.`,
+            For each suggestion, provide a link to a website where the user can seek out the suggestion. Ensure the link is the only thing in parentheses.`,
           },
         ],
       });
@@ -64,7 +64,7 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
             6. In a team setting, do you prefer taking the lead or supporting others? Why? 
             7. What type of work environment helps you stay motivated and productive? 
             Here are the answers to each of the questions in order: ${detailedAnswers?.join(', ')}
-            For each suggestion, provide a link to a website where the user can seek out the suggestion.`,
+            For each suggestion, provide a link to a website where the user can seek out the suggestion. Ensure the link is the only thing in parentheses.`,
           },
         ],
       });
@@ -83,13 +83,16 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
 
 
   let career1Name = career1.split(":")[0] || "";
-  let career1Desc = career1.slice(career1.indexOf(":") + 1).trim();
+  let career1Desc = career1.slice(career1.indexOf(":") + 1, career1.indexOf("(")).trim();
+  let career1Link = career1.slice(career1.indexOf("(") + 1, career1.indexOf(")")).trim();
 
   let career2Name = career2.split(":")[0] || "";
-  let career2Desc = career2.slice(career2.indexOf(":") + 1).trim();
+  let career2Desc = career2.slice(career2.indexOf(":") + 1, career2.indexOf("(")).trim();
+  let career2Link = career2.slice(career2.indexOf("(") + 1, career2.indexOf(")")).trim();
 
   let career3Name = career3.split(":")[0] || "";
-  let career3Desc = career3.slice(career3.indexOf(":") + 1).trim();
+  let career3Desc = career3.slice(career3.indexOf(":") + 1, career3.indexOf("(")).trim();
+  let career3Link = career3.slice(career3.indexOf("(") + 1, career3.indexOf(")")).trim();
 
   return (
     <div className="Results">
@@ -97,13 +100,13 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
         <h1>Career Suggestions</h1>
         <Button className="Home-Button" onClick={homePage}>HOME</Button>
       </header>
-      { career1Desc && career2Desc && career3Desc ? <p>
+      { career1Name && career2Name && career3Name ? <p>
       <h2 style={{float: "left", paddingLeft: "30px", paddingTop: "30px"}}>{career1Name}</h2>
-      <div className='Response'>{career1Desc}</div>
+      <div className='Response'>{career1Desc}<a href={career1Link}>{career1Link}</a></div>
       <h2 style={{float: "left", paddingLeft: "30px", paddingTop: "30px"}}>{career2Name}</h2>
-      <div className='Response'>{career2Desc}</div>
+      <div className='Response'>{career2Desc}<a href={career2Link}>{career2Link}</a></div>
       <h2 style={{float: "left", paddingLeft: "30px", paddingTop: "30px"}}>{career3Name}</h2>
-      <div className='Response'>{career3Desc}</div></p> : <img src={loadingSymbol} alt="Loading..."/>}
+      <div className='Response'>{career3Desc}<a href={career3Link}>{career3Link}</a></div></p> : <img src={loadingSymbol} alt="Loading..." style={{position: 'absolute', marginLeft: '30%', marginTop: '10%'}}/>}
 
     </div>
   );
