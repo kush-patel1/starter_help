@@ -30,10 +30,10 @@ function BasicQuestions({homePage,resultsPage,handleSubmit,changeKey}: QuestionP
 
     return (<div className='BasicQuestions'>
         <header className="BasicQuestions-Header">
-            <h1>Basic Questions Page</h1>
+            <h1>BASIC QUESTIONS</h1>
             <ProgressBar progress={progress} />
             <p className="basicCheckmark">{progress === 100 ? "✔️": ""}</p>
-            <Button className="Home-Button" onClick={homePage}> HOME </Button>
+            <Button style={{backgroundColor: "#f8d6bd", borderColor: "#f8d6bd", color: "#033b57", fontSize: "20px" }} onClick={homePage}> HOME </Button>
         </header>
         <body className='BasicQuestions-Body'>
             <ol>
