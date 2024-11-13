@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import OpenAI from "openai";
 import "./Results.css";
-import loadingSymbol from "./LoadingSymbol.gif";
+import loadingSymbol from "./LoadingGIF.gif";
 
 interface ResultsProps {
   homePage: () => void;
