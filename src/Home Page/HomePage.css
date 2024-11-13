@@ -1,6 +1,7 @@
 .homeHeader {
-    background-color: green;
-    border: 3px solid black;
+    background-color: #033b57;
+    font-family:'Ovo';
+    color: #f8d6bd;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -21,6 +22,11 @@
     text-align: center;
 }
 
+.homeBody{
+    background-color: rgb(243, 234, 221);
+    height: 1000px;
+}
+
 .homeBasicQuestions{
     word-wrap: break-word;
     width: 33%;
@@ -32,9 +38,13 @@
     bottom: 60%;
     padding: 20px;
     display: inline-block;
-    background-color: yellow;
-    border: 2px solid black;
+    background-color: #fff3dc5f;
     border-radius: 15px;
+    color: rgb(45, 45, 45);
+    font-family:'Gill Sans';
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.2); /* Light shadow */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Optional border for a frosted edge */
 }
 
 /* style={{wordWrap: "break-word", width: "500px", position: "relative",top:'15%', left: "10%", 
@@ -51,23 +61,29 @@ border: "2px solid black", borderRadius: "15px"}} */
     margin-bottom:2%;
     padding: 20px;
     display: inline-block;
-    background-color: orange;
-    border: 2px solid black;
+    background-color: #fff3dc5f;
     border-radius: 15px;
+    color: rgb(45, 45, 45);
+    font-family:'Gill Sans';
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.2); /* Light shadow */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Optional border for a frosted edge */
+    
 }
 
 /* style={{wordWrap: "break-word", width: "500px", position: "fixed", bottom: "500px", right: "220px", padding: "20px",
 float: "right", display: "inline-block", backgroundColor: "orange", border: "2px solid black", borderRadius: "15px"}} */
 
-.footer{
-    border: 3px solid black;
+.footer {
     padding: 15px;
-    background-color: green;
+    background-color: #033b57;
     text-align: center;
     bottom: 0;
     left: 0;
-    position:fixed;
-    width:100%;
+    position: fixed;
+    width: 100%;
+    color: rgb(243, 234, 221);
+    font-family: 'Gill Sans';
 }
 
 /*style={{border: "3px solid black", padding: "15px", backgroundColor: "green", textAlign: "center", bottom: "0", left: "0", 
@@ -95,10 +111,14 @@ position: "fixed", width: "100%"}}*/
 .text{
     flex:1;
     margin-right:10%;
-    border: 2px solid black;
     padding: 20px;
-    background-color: #4DA6FF;
+    background-color: #fff3dc5f;
     border-radius: 15px;
+    font-family: 'Gill Sans';
+    color:rgb(45, 45, 45);
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.2); /* Light shadow */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Optional border for a frosted edge */
 }
 
 .API-form{
@@ -126,11 +146,12 @@ position: "fixed", width: "100%"}}*/
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: white;
-    border: 3px solid black;
+    background-color: rgb(243, 234, 221);
     border-radius: 8px;
     padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     max-width: 300px;
     z-index: 1000;
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.2); /* Light shadow */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Optional border for a frosted edge */
 }

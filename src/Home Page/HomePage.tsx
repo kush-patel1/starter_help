@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import TestingImage from "./dudetesting.webp";
-import LogoImage from "./reactlogo.png";
+import LogoImage from "./CareerWave.png";
+import BackgroundImage from "./Shoreline.png";
 import './HomePage.css';
 import { Button, Form } from "react-bootstrap";
 import { ChangeEvent } from "react";
@@ -16,7 +17,7 @@ interface QuestionProps {
   changeKey: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
-function HomePage({ basicQuestions, detailedQuestions, loggedPage, handleSubmit, changeKey }: QuestionProps) {
+function HomePage({ basicQuestions, detailedQuestions, loggedPage, handleSubmit, changeKey}: QuestionProps) {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -42,12 +43,13 @@ function HomePage({ basicQuestions, detailedQuestions, loggedPage, handleSubmit,
   return (
     <div className="App">
       <div className="homeHeader">
-        <img src={LogoImage} alt="a logo image" style={{ width: "75px", height: "auto" }} />
-        <h1 style={{ flex: 1, textAlign: "center", marginRight: "20px", position: "fixed", left: "43.3%" }}>Home Page</h1>
+        <img src={LogoImage} alt="a logo image" style={{ width: "300px", height: "auto" }} />
         {!isPopupOpen && (
-          <button style={{ borderRadius: "5px" }} onClick={togglePopup}>
-            Log In
-          </button>
+          <div className="loginButton">
+          <Button style={{backgroundColor: "#f8d6bd", borderColor: "#f8d6bd", color: "#033b57", fontSize: "20px" }} onClick={togglePopup}>
+            Login
+          </Button>
+          </div>
         )}
       </div>
 
@@ -73,12 +75,18 @@ function HomePage({ basicQuestions, detailedQuestions, loggedPage, handleSubmit,
                 placeholder="Enter Password"
               />
               <p></p>
-              <button onClick={handleLogin} style={{backgroundColor: "#00FF00"}}>Login</button>
-              <button onClick={togglePopup} style={{backgroundColor: "#FF0000", color: "white"}}>Close</button>
+              <button onClick={handleLogin} style={{backgroundColor: "#239e2b", color: "white"}}>Login</button>
+              <button onClick={togglePopup} style={{backgroundColor: "#9e2323", color: "white"}}>Close</button>
             </div>
           </div>
         </>
       )}
+      <div className="homeBody" style={{
+          backgroundImage: `url(${BackgroundImage})`,
+          backgroundPosition: "bottom center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          color: "rgb(243, 234, 221)"}}>
       <div className="content">
         <div className="description">
           <div className="picture">
@@ -91,16 +99,17 @@ function HomePage({ basicQuestions, detailedQuestions, loggedPage, handleSubmit,
         </div>
 
         <div className="homeBasicQuestions">
-          <h4 style={{ marginBottom: "20px" }}>Basic Questions</h4>
+          <h4 style={{ marginBottom: "20px" }}>BASIC QUESTIONS</h4>
           <button style={{ borderRadius: "5px", marginBottom: "20px" }} onClick={basicQuestions}>BASIC</button>
           <p>A brief overview providing broad career suggestions based on key interests on a surface level</p>
         </div>
 
         <div className="homeDetailedQuestions">
-          <h4 style={{ marginBottom: "20px" }}>Detailed Questions</h4>
+          <h4 style={{ marginBottom: "20px" }}>DETAILED QUESTIONS</h4>
           <button style={{ borderRadius: "5px", marginBottom: "20px" }} onClick={detailedQuestions}>DETAILED</button>
           <p>A thorough personalized career evaluation based on skills, interests, and values</p>
         </div>
+      </div>
       </div>
 
       <div className="footer">
