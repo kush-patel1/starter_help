@@ -32,10 +32,10 @@ function DetailedQuestions({homePage,resultsPage,handleSubmit,changeKey}: Questi
     return (
       <div className='detailedQuestions'>
         <header className='DetailedQuestions-header'>
-          <h1>Detailed Questions Page</h1>
+          <h1>DETAILED QUESTIONS</h1>
           <ProgressBar progress={progress} />
           <p className="detailedCheckmark">{progress === 100 ? "✔️": ""}</p>
-          <Button className="Home-Button" onClick={homePage}> HOME </Button>
+          <Button style={{backgroundColor: "#f8d6bd", borderColor: "#f8d6bd", color: "#033b57", fontSize: "20px" }} onClick={homePage}> HOME </Button>
         </header>
         <body className='DetailedQuestions-body'>
           <ol>

@@ -5,14 +5,14 @@
   }
   
   .DetailedQuestions-header {
-    background-color: #b6e7ff;
+    background-color: #033b57;
     min-height: 10vh;
     display: flex;
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: rgb(0, 0, 0);
+    color: #f8d6bd;
     position: fixed;
     width: 100%;
     padding: 0 1in;
@@ -22,7 +22,7 @@
     margin-right: 20px;
   }
   .DetailedQuestions-body{
-    background-color: #fcf4ea;
+    background-color: rgb(243, 234, 221);
     max-height: 1000vh;
     align-items: flex-start;
     justify-content:center;
@@ -60,7 +60,7 @@
   }
 
   .DetailedQuestions-footer {
-    background-color: #142d1f;
+    background-color: #033b57;
     max-height: 1000vh;
     text-align:center;
     display: flex;
