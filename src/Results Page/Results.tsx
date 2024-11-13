@@ -3,6 +3,9 @@ import { Button } from 'react-bootstrap';
 import OpenAI from "openai";
 import "./Results.css";
 import loadingSymbol from "./LoadingGIF.gif";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import { Doughnut } from 'react-chartjs-2';
+
 
 interface ResultsProps {
   homePage: () => void;
@@ -26,7 +29,7 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
         model: "gpt-4o-mini",
         //temperature: 1.3,
         messages: [
-          { role: "system", content: "You are a career suggestion expert. When giving career suggestions, you do not include *s. For each career option, provide a title for the career, a colon, and then a description. Between career options, you leave a line worth of space and a @ symbol." },
+          { role: "system", content: "You are a career suggestion expert. When giving career suggestions, you do not include *s. For each career option, provide a title for the career, a colon, and then a description, and then a percentage based on how well of a match the job would be based on the answers. Organize them from highest to lowest. Between career options, you leave a line worth of space and a @ symbol." },
           {
             role: "user",
             content: `This is for a career quiz. You are meant to suggest 3 career options, each on their own line, to the user based on their answers to these 7 questions: 
@@ -38,7 +41,7 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
             6. Do you like to solve problems or follow instructions 
             7. Would you rather work in an office or remotely? 
             Here are the answers to each of the questions in order: ${basicAnswers.join(', ')}
-            For each suggestion, provide a link to a website where the user can seek out the suggestion.`,
+            For each suggestion, provide a link to a website where the user can seek out the suggestion. Ensure the link is the only thing in parentheses.`,
           },
         ],
       });
@@ -53,7 +56,7 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
       const completion = await openai.chat.completions.create({
         model: "gpt-4o-mini",
         messages: [
-          { role: "system", content: "You are a career suggestion expert. When giving career suggestions, you do not include *s. For each career option, provide a title for the career, a colon, and then a description. Between career options, you leave a line worth of space and a @ symbol." },
+          { role: "system", content: "You are a career suggestion expert. When giving career suggestions, you do not include *s. For each career option, provide a title for the career, a colon, and then a description, and then a percentage based on how well of a match the job would be based on the answers. Organize them from highest to lowest. Between career options, you leave a line worth of space and a @ symbol." },
           {
             role: "user",
             content: `This is for a career quiz. You are meant to suggest 3 career options, each on their own line, to the user based on their answers to these 7 questions: 
@@ -65,7 +68,7 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
             6. In a team setting, do you prefer taking the lead or supporting others? Why? 
             7. What type of work environment helps you stay motivated and productive? 
             Here are the answers to each of the questions in order: ${detailedAnswers?.join(', ')}
-            For each suggestion, provide a link to a website where the user can seek out the suggestion.`,
+            For each suggestion, provide a link to a website where the user can seek out the suggestion. Ensure the link is the only thing in parentheses.`,
           },
         ],
       });
@@ -81,37 +84,106 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
     setResponseGen(false);
   }
 
-
+  let career1Perc = parseInt(career1.slice(career1.length - 3, career1.length - 1));
+  let career2Perc = parseInt(career2.slice(career2.length - 3, career2.length - 1));
+  let career3Perc = parseInt(career3.slice(career3.length - 3, career3.length - 1));
 
   let career1Name = career1.split(":")[0] || "";
-  let career1Desc = career1.slice(career1.indexOf(":") + 1).trim();
-
+  let career1Desc = career1.slice(career1.indexOf(":") + 1, career1.indexOf("(")).trim();
+  let career1Link = career1.slice(career1.indexOf("(") + 1, career1.indexOf(")")).trim();
+  //career1Desc = career1Desc.slice(0, career1Desc.length - 4);
+        
   let career2Name = career2.split(":")[0] || "";
-  let career2Desc = career2.slice(career2.indexOf(":") + 1).trim();
-
+  let career2Desc = career2.slice(career2.indexOf(":") + 1, career2.indexOf("(")).trim();
+  let career2Link = career2.slice(career2.indexOf("(") + 1, career2.indexOf(")")).trim();
+  //career2Desc = career2Desc.slice(0, career2Desc.length - 4);
+        
   let career3Name = career3.split(":")[0] || "";
-  let career3Desc = career3.slice(career3.indexOf(":") + 1).trim();
+  let career3Desc = career3.slice(career3.indexOf(":") + 1, career3.indexOf("(")).trim();
+  let career3Link = career3.slice(career3.indexOf("(") + 1, career3.indexOf(")")).trim();
+  //career3Desc = career3Desc.slice(0, career3Desc.length - 4);
+
+  ChartJS.register(ArcElement, Tooltip, Legend);
+
+  const options = {
+    rotation: -90,         // Starts the chart from the top-center
+    circumference: 180,    // Only displays half of the chart (180 degrees)
+    cutout: '70%',         // Adjusts the thickness of the gauge
+  };
+
+  const data1 = {
+    datasets: [
+      {
+        data: [career1Perc, 100 - career1Perc],
+        backgroundColor: ['#32CD32', '#b3b3b3'],
+        hoverBackgroundColor: ['#66FF66', '#cccccc']
+      },
+    ],
+  };
+
+  const data2 = {
+    datasets: [
+      {
+        data: [career2Perc, 100 - career2Perc],
+        backgroundColor: ['#1E90FF', '#b3b3b3'],
+        hoverBackgroundColor: ['#63A4FF', '#cccccc']
+      },
+    ],
+  };
+
+  const data3 = {
+    datasets: [
+      {
+        data: [career3Perc, 100 - career3Perc],
+        backgroundColor: ['#FF7F32', '#b3b3b3'],
+        hoverBackgroundColor: ['#FF9F66', '#cccccc']
+      },
+    ],
+  };
 
   return (
-    <div className="Results">
+    <div className="Results"> 
       <header className='Results-header'>
         <h1>Career Suggestions</h1>
         <Button className="Home-Button" onClick={homePage}>HOME</Button>
       </header>
-      {career1Desc && career2Desc && career3Desc ? (
-        <div>
-          <h2 style={{ float: "left", paddingLeft: "30px", paddingTop: "30px" }}>{career1Name}</h2>
-          <div className='Response'>{career1Desc}</div>
-          <h2 style={{ float: "left", paddingLeft: "30px", paddingTop: "30px" }}>{career2Name}</h2>
-          <div className='Response'>{career2Desc}</div>
-          <h2 style={{ float: "left", paddingLeft: "30px", paddingTop: "30px" }}>{career3Name}</h2>
-          <div className='Response'>{career3Desc}</div>
+      { career1Desc && career2Desc && career3Desc ? <p>
+      <div className="Container">
+        <div className="TextContainer">
+          <h2 style={{ paddingTop: "30px" }}>{career1Name}</h2>
+          <div className="Response">{career1Desc}<a href={career1Link}>{career1Link}</a></div>
         </div>
-      ) : (
-        <div className="loading-container">
-          <img src={loadingSymbol} alt="Loading..." className="loading-symbol" />
+        <div className="PerMatch">
+          <div className="Gauge">
+            <Doughnut data={data1} options={options} />
+          </div>
+          <h4>{career1Perc}% Match</h4>
         </div>
-      )}
+      </div>
+      <div className="Container">
+        <div className="TextContainer">
+          <h2 style={{ paddingTop: "30px" }}>{career2Name}</h2>
+          <div className="Response">{career2Desc}<a href={career2Link}>{career2Link}</a></div>
+        </div>
+        <div className="PerMatch">
+          <div className="Gauge">
+            <Doughnut data={data2} options={options} />
+          </div>
+          <h4>{career2Perc}% Match</h4>
+        </div>
+      </div>
+      <div className="Container">
+        <div className="TextContainer">
+          <h2 style={{ paddingTop: "30px" }}>{career3Name}</h2>
+          <div className="Response">{career3Desc}<a href={career3Link}>{career3Link}</a></div>
+        </div>
+        <div className="PerMatch">
+          <div className="Gauge">
+            <Doughnut data={data3} options={options} />
+          </div>
+          <h4>{career3Perc}% Match</h4>
+        </div>
+      </div></p> : <img src={loadingSymbol} alt="Loading..."/>}
     </div>
   );
 }
