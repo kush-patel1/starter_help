@@ -40,7 +40,7 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
             6. In a team setting, do you prefer taking the lead or supporting others? Why? 
             7. What type of work environment helps you stay motivated and productive? 
             Here are the answers to each of the questions in order: ${basicAnswers.join(', ')}
-            For each suggestion, provide a link to a website where the user can seek out the suggestion.`,
+            For each suggestion, provide a link to a website where the user can seek out the suggestion. This should come before the match percentage. Dont include the words match percentage just the number and percent symbol.`,
           },
         ],
       });
@@ -67,7 +67,7 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
             6. In a team setting, do you prefer taking the lead or supporting others? Why? 
             7. What type of work environment helps you stay motivated and productive? 
             Here are the answers to each of the questions in order: ${detailedAnswers?.join(', ')}
-            For each suggestion, provide a link to a website where the user can seek out the suggestion.`,
+            For each suggestion, provide a link to a website where the user can seek out the suggestion. This should come before the match percentage. Dont include the words match percentage just the number and percent symbol.`,
           },
         ],
       });
