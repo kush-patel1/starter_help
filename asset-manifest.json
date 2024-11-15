@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/starter_help/static/css/main.def70841.css",
-    "main.js": "/starter_help/static/js/main.40077bbc.js",
+    "main.css": "/starter_help/static/css/main.0c16e300.css",
+    "main.js": "/starter_help/static/js/main.7718eeb0.js",
     "static/js/453.bad6c33a.chunk.js": "/starter_help/static/js/453.bad6c33a.chunk.js",
     "static/media/reactlogo copy.png": "/starter_help/static/media/reactlogo copy.b9b63f179aec31ce19cf.png",
     "static/media/reactlogo.png": "/starter_help/static/media/reactlogo.b9b63f179aec31ce19cf.png",
@@ -9,12 +9,12 @@
     "static/media/dudetesting.webp": "/starter_help/static/media/dudetesting.c84ba2567083322e6a7d.webp",
     "static/media/LoadingSymbol.gif": "/starter_help/static/media/LoadingSymbol.795d2f2052c424b2f35d.gif",
     "index.html": "/starter_help/index.html",
-    "main.def70841.css.map": "/starter_help/static/css/main.def70841.css.map",
-    "main.40077bbc.js.map": "/starter_help/static/js/main.40077bbc.js.map",
+    "main.0c16e300.css.map": "/starter_help/static/css/main.0c16e300.css.map",
+    "main.7718eeb0.js.map": "/starter_help/static/js/main.7718eeb0.js.map",
     "453.bad6c33a.chunk.js.map": "/starter_help/static/js/453.bad6c33a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.def70841.css",
-    "static/js/main.40077bbc.js"
+    "static/css/main.0c16e300.css",
+    "static/js/main.7718eeb0.js"
   ]
 }
