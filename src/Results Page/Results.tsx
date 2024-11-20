@@ -43,10 +43,9 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
             For each suggestion, provide a link to a real website where the user can seek out the suggestion. Ensure the link is the only thing in parentheses and place it before the percentage match.`,
           },
         ],
-        //temperature: 1.3,
+        temperature: 1.25,
       });
       const suggestions = completion.choices[0].message?.content || "No suggestions available.";
-      //setCareerSuggestions(suggestions);
       setCareer1(suggestions.slice(0, suggestions.indexOf("@")).trim());
       setCareer2(suggestions.slice(suggestions.indexOf("@") + 2, suggestions.lastIndexOf("@")).trim());
       setCareer3(suggestions.slice(suggestions.lastIndexOf("@") + 2).trim());
@@ -54,7 +53,7 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
     else{
     const openai = new OpenAI({ apiKey: apiKey, dangerouslyAllowBrowser: true });
       const completion = await openai.chat.completions.create({
-        model: "gpt-4o-mini",
+        model: "gpt-4o",
         messages: [
           { role: "system", content: "You are a career suggestion expert.  You give suggestions from all fields and levels, even if it would be fast food worker or driver.When giving career suggestions, you do not include *s. For each career option, provide a title for the career, a colon, and then a description, and then a percentage based on how well of a match the job would be based on the answers. Organize them from highest to lowest. Between career options, you leave a line worth of space and a @ symbol." },
           {
@@ -68,27 +67,18 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
             6. In a team setting, do you prefer taking the lead or supporting others? Why? 
             7. What type of work environment helps you stay motivated and productive? 
             Here are the answers to each of the questions in order: ${detailedAnswers?.join(', ')}
-            Have some leniency with answers but if any of the answers do not make sense or do not answer any part of the question, instead respond with "The answers are invalid, please answer the questions." and point out which responses were bad and why. Do not do this because an answer isn't specific as long as it gives any reasonable answer to the question.
+            Have some leniency with answers but if any of the answers do not make sense or do not answer any part of the question, instead respond with "The answers are invalid.". Do not do this because an answer isn't specific as long as it gives any reasonable answer to the question.
             For each suggestion, provide a link to a real website where the user can seek out the suggestion. Ensure the link is the only thing in parentheses and place it before the percentage match.`,
           },
         ],
-        //temperature: 1.25,
+        temperature: 1.25,
       });
       const suggestions = completion.choices[0].message?.content || "No suggestions available.";
       //setCareerSuggestions(suggestions);
-      if(suggestions === "The answers are invalid, please answer the questions."){
-        setCareer1(suggestions);
-        return (
-          <div className="Results">
-            <header className='Results-header'>
-              <h1>Career Suggestions</h1>
-              <Button className="Home-Button" onClick={homePage}>HOME</Button>
-            </header>
-            <div className='Response'>{career1}</div>
-          </div>
-        );
+      if(suggestions === "The answers are invalid."){
+        setCareer2(suggestions);
       }
-      if(career1 != ""){
+      else{
         setCareer1(suggestions.slice(0, suggestions.indexOf("@")).trim());
         setCareer2(suggestions.slice(suggestions.indexOf("@") + 2, suggestions.lastIndexOf("@")).trim());
         setCareer3(suggestions.slice(suggestions.lastIndexOf("@") + 2).trim());
@@ -163,7 +153,7 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
       { career1Desc && career2Desc && career3Desc ? <p>
       <div className="Container">
         <div className="TextContainer">
-          <h2 style={{ paddingTop: "30px" }}>{career1Name}</h2>
+          <h2 className='ResultName'>{career1Name}</h2>
           <div className="Response">{career1Desc} <a href={'https://' + career1Link} rel='noreferrer' target='_blank' style={{cursor: "pointer"}}>{career1Link}</a></div>
         </div>
         <div className="PerMatch">
@@ -175,7 +165,7 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
       </div>
       <div className="Container">
         <div className="TextContainer">
-          <h2 style={{ paddingTop: "30px" }}>{career2Name}</h2>
+          <h2 className='ResultName'>{career2Name}</h2>
           <div className="Response">{career2Desc} <a href={'https://' + career2Link} rel='noreferrer' target='_blank' style={{cursor: "pointer"}}>{career2Link}</a></div>
         </div>
         <div className="PerMatch">
@@ -187,7 +177,7 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
       </div>
       <div className="Container">
         <div className="TextContainer">
-          <h2 style={{ paddingTop: "30px" }}>{career3Name}</h2>
+          <h2 className='ResultName'>{career3Name}</h2>
           <div className="Response">{career3Desc} <a href={'https://' + career3Link} rel='noreferrer' target='_blank' style={{cursor: "pointer"}}>{career3Link}</a></div>
         </div>
         <div className="PerMatch">
@@ -196,7 +186,8 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
           </div>
           <h4>{career3Perc}% Match</h4>
         </div>
-      </div></p>: career1 ? <p><div className='Response'>{career1}</div></p> :
+      </div></p>:
+      career2 ? <p><div className='Response'>{career2}</div></p> :
       <img src={loadingSymbol} alt="Loading..." style={{marginTop:'10%', marginLeft: '30%'}}/>}
     </div>
   );
