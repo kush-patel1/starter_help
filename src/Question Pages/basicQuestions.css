@@ -47,14 +47,14 @@
   }
   
   .basicFormat {
-    padding-top: 50px;
+    padding-top: 5%;
     position: absolute;
     top: 52%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    width: 850px;
-    height: 600px;
+    width: 65%;
+    height: 65%;
     border: 3px solid black;
     border-radius: 15px;
     background-color: #f0229a;
@@ -63,7 +63,7 @@
 
   .BasicQuestions-getAnswersButton{
     align-self: flex-end;
-    margin-top: 20px;
+    margin-top: 2%;
     width: 180px;
     height: 70px;
     font-size: 20px;
@@ -88,11 +88,17 @@
     color: #ffffff;
   }
 
-  .options-container {
+  .large-options-container {
     display: flex;
-    flex-direction: column;
+    flex-direction:row;
     gap: 10px;
     align-items: center;
+}
+.options-container {
+  display: flex;
+  flex-direction:column;
+  gap: 10px;
+  align-items: center;
 }
 
 .option-bar {

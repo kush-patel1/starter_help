@@ -43,7 +43,7 @@ function DetailedQuestions({ homePage, resultsPage, handleSubmit, changeKey }: Q
             <div className='DetailedQuestions-body'>
                 {qCount === 0 && (
                     <div className="detailedFormat">
-                        <p style={{paddingBottom: "100px", paddingLeft: "20px", paddingRight: "20px"}}>1. Do you prefer managing projects or executing tasks? Why?</p>
+                        <p style={{paddingBottom: "6%", paddingLeft: "2%", paddingRight: "2%"}}>1. Do you prefer managing projects or executing tasks? Why?</p>
                         <Form>
                             <Form.Control
                                 as="textarea"
@@ -53,14 +53,14 @@ function DetailedQuestions({ homePage, resultsPage, handleSubmit, changeKey }: Q
                                 onChange={(event) => handleAnswerChange(0, event.target.value)}
                             />
                         </Form>
-                        <Button onClick={nextQuestion} disabled={!detailedAnswers[0]} style={{ marginTop: "130px" }}>
+                        <Button onClick={nextQuestion} disabled={!detailedAnswers[0]} style={{ marginTop: "8%" }}>
                             Next
                         </Button>
                     </div>
                 )}
                 {qCount === 1 && (
                     <div className="detailedFormat">
-                        <p style={{paddingBottom: "100px", paddingLeft: "20px", paddingRight: "20px"}}>2. How do you balance job satisfaction with financial stability when considering a career?</p>
+                        <p style={{paddingBottom: "6%", paddingLeft: "2%", paddingRight: "2%"}}>2. How do you balance job satisfaction with financial stability when considering a career?</p>
                         <Form>
                             <Form.Control
                                 as="textarea"
@@ -70,14 +70,14 @@ function DetailedQuestions({ homePage, resultsPage, handleSubmit, changeKey }: Q
                                 onChange={(event) => handleAnswerChange(1, event.target.value)}
                             />
                         </Form>
-                        <Button onClick={nextQuestion} disabled={!detailedAnswers[1]} style={{ marginTop: "130px" }}>
+                        <Button onClick={nextQuestion} disabled={!detailedAnswers[1]} style={{ marginTop: "8%" }}>
                             Next
                         </Button>
                     </div>
                 )}
                 {qCount === 2 && (
                     <div className="detailedFormat">
-                        <p style={{paddingBottom: "100px", paddingLeft: "20px", paddingRight: "20px"}}>3. Do you prefer working in established industries or emerging fields? Why?</p>
+                        <p style={{paddingBottom: "6%", paddingLeft: "2%", paddingRight: "2%"}}>3. Do you prefer working in established industries or emerging fields? Why?</p>
                         <Form>
                             <Form.Control
                                 as="textarea"
@@ -87,14 +87,14 @@ function DetailedQuestions({ homePage, resultsPage, handleSubmit, changeKey }: Q
                                 onChange={(event) => handleAnswerChange(2, event.target.value)}
                             />
                         </Form>
-                        <Button onClick={nextQuestion} disabled={!detailedAnswers[2]} style={{ marginTop: "130px" }}>
+                        <Button onClick={nextQuestion} disabled={!detailedAnswers[2]} style={{ marginTop: "8%" }}>
                             Next
                         </Button>
                     </div>
                 )}
                 {qCount === 3 && (
                     <div className="detailedFormat">
-                        <p style={{paddingBottom: "100px", paddingLeft: "20px", paddingRight: "20px"}}>4. When considering a career change, what factors play the biggest role for you?</p>
+                        <p style={{paddingBottom: "6%", paddingLeft: "2%", paddingRight: "2%"}}>4. When considering a career change, what factors play the biggest role for you?</p>
                         <Form>
                             <Form.Control
                                 as="textarea"
@@ -104,14 +104,14 @@ function DetailedQuestions({ homePage, resultsPage, handleSubmit, changeKey }: Q
                                 onChange={(event) => handleAnswerChange(3, event.target.value)}
                             />
                         </Form>
-                        <Button onClick={nextQuestion} disabled={!detailedAnswers[3]} style={{ marginTop: "130px" }}>
+                        <Button onClick={nextQuestion} disabled={!detailedAnswers[3]} style={{ marginTop: "8%" }}>
                             Next
                         </Button>
                     </div>
                 )}
                 {qCount === 4 && (
                     <div className="detailedFormat">
-                        <p style={{paddingBottom: "100px", paddingLeft: "20px", paddingRight: "20px"}}>5. In your ideal job, would you rather work on multiple small projects or one large complex task? Why?</p>
+                        <p style={{paddingBottom: "6%", paddingLeft: "2%", paddingRight: "2%"}}>5. In your ideal job, would you rather work on multiple small projects or one large complex task? Why?</p>
                         <Form>
                             <Form.Control
                                 as="textarea"
@@ -121,14 +121,14 @@ function DetailedQuestions({ homePage, resultsPage, handleSubmit, changeKey }: Q
                                 onChange={(event) => handleAnswerChange(4, event.target.value)}
                             />
                         </Form>
-                        <Button onClick={nextQuestion} disabled={!detailedAnswers[4]} style={{ marginTop: "130px" }}>
+                        <Button onClick={nextQuestion} disabled={!detailedAnswers[4]} style={{ marginTop: "8%" }}>
                             Next
                         </Button>
                     </div>
                 )}
                 {qCount === 5 && (
                     <div className="detailedFormat">
-                        <p style={{paddingBottom: "100px", paddingLeft: "20px", paddingRight: "20px"}}>6. In a team setting, do you prefer taking the lead or supporting others? Why?</p>
+                        <p style={{paddingBottom: "6%", paddingLeft: "2%", paddingRight: "2%"}}>6. In a team setting, do you prefer taking the lead or supporting others? Why?</p>
                         <Form>
                             <Form.Control
                                 as="textarea"
@@ -138,14 +138,14 @@ function DetailedQuestions({ homePage, resultsPage, handleSubmit, changeKey }: Q
                                 onChange={(event) => handleAnswerChange(5, event.target.value)}
                             />
                         </Form>
-                        <Button onClick={nextQuestion} disabled={!detailedAnswers[5]} style={{ marginTop: "130px" }}>
+                        <Button onClick={nextQuestion} disabled={!detailedAnswers[5]} style={{ marginTop: "8%" }}>
                             Next
                         </Button>
                     </div>
                 )}
                 {qCount === 6 && (
                     <div className="detailedFormat">
-                        <p style={{paddingBottom: "100px", paddingLeft: "20px", paddingRight: "20px"}}>7. What type of work environment helps you stay motivated and productive?</p>
+                        <p style={{paddingBottom: "6%", paddingLeft: "2%", paddingRight: "2%"}}>7. What type of work environment helps you stay motivated and productive?</p>
                         <Form>
                             <Form.Control
                                 as="textarea"
@@ -155,16 +155,15 @@ function DetailedQuestions({ homePage, resultsPage, handleSubmit, changeKey }: Q
                                 onChange={(event) => handleAnswerChange(6, event.target.value)}
                             />
                         </Form>
-                    </div>
-                )}
-                <Button
+                        <Button
                     className="DetailedQuestions-getAnswersButton"
                     onClick={getResults}
                     disabled={progress !== 100}
-                    style={{ marginTop: "550px" }}
                 >
                     Get Answers
                 </Button>
+                    </div>
+                )}
             </div>
             <footer className='DetailedQuestions-footer'>
                 <Form>

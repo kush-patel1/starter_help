@@ -42,7 +42,7 @@ function HomePage({ basicQuestions, detailedQuestions, loggedPage, handleSubmit,
   return (
     <div className="App">
       <div className="homeHeader">
-        <img src={LogoImage} alt="a logo image" style={{ width: "75px", height: "auto" }} />
+        <img src={LogoImage} alt="a logo image" style={{ width: "5%", height: "auto" }} />
         <h1 style={{ flex: 1, textAlign: "center", marginRight: "20px", position: "fixed", left: "43.3%" }}>Home Page</h1>
         {!isPopupOpen && (
           <button style={{ borderRadius: "5px" }} onClick={togglePopup}>
