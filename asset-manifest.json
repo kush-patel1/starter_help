@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/starter_help/static/css/main.e3f05f94.css",
-    "main.js": "/starter_help/static/js/main.c66dec5f.js",
+    "main.css": "/starter_help/static/css/main.a090b65f.css",
+    "main.js": "/starter_help/static/js/main.877564cf.js",
     "static/js/453.bad6c33a.chunk.js": "/starter_help/static/js/453.bad6c33a.chunk.js",
     "static/media/reactlogo copy.png": "/starter_help/static/media/reactlogo copy.b9b63f179aec31ce19cf.png",
     "static/media/reactlogo.png": "/starter_help/static/media/reactlogo.b9b63f179aec31ce19cf.png",
@@ -9,12 +9,12 @@
     "static/media/dudetesting.webp": "/starter_help/static/media/dudetesting.c84ba2567083322e6a7d.webp",
     "static/media/LoadingSymbol.gif": "/starter_help/static/media/LoadingSymbol.795d2f2052c424b2f35d.gif",
     "index.html": "/starter_help/index.html",
-    "main.e3f05f94.css.map": "/starter_help/static/css/main.e3f05f94.css.map",
-    "main.c66dec5f.js.map": "/starter_help/static/js/main.c66dec5f.js.map",
+    "main.a090b65f.css.map": "/starter_help/static/css/main.a090b65f.css.map",
+    "main.877564cf.js.map": "/starter_help/static/js/main.877564cf.js.map",
     "453.bad6c33a.chunk.js.map": "/starter_help/static/js/453.bad6c33a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e3f05f94.css",
-    "static/js/main.c66dec5f.js"
+    "static/css/main.a090b65f.css",
+    "static/js/main.877564cf.js"
   ]
 }
