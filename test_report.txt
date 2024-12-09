@@ -3,7 +3,7 @@
 > react-scripts test --coverage
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (48 ms)
+  ✕ renders learn react link (46 ms)
 
   ● renders learn react link
 
@@ -21,79 +21,77 @@ FAIL src/App.test.tsx
             [36m>[39m
               [36m<img[39m
                 [33malt[39m=[32m"a logo image"[39m
-                [33msrc[39m=[32m"reactlogo.png"[39m
-                [33mstyle[39m=[32m"width: 5%; height: auto;"[39m
+                [33msrc[39m=[32m"CareerArcadeLogo.png"[39m
+                [33mstyle[39m=[32m"width: 25%; height: auto;"[39m
               [36m/>[39m
-              [36m<h1[39m
-                [33mstyle[39m=[32m"flex: 1; text-align: center; margin-right: 20px; position: fixed; left: 43.3%;"[39m
-              [36m>[39m
-                [0mHome Page[0m
-              [36m</h1>[39m
               [36m<button[39m
-                [33mstyle[39m=[32m"border-radius: 5px;"[39m
+                [33mclass[39m=[32m"homeLoginButton btn btn-primary"[39m
+                [33mtype[39m=[32m"button"[39m
               [36m>[39m
-                [0mLog In[0m
+                [0mLogin[0m
               [36m</button>[39m
             [36m</div>[39m
             [36m<div[39m
-              [33mclass[39m=[32m"content"[39m
+              [33mclass[39m=[32m"homeBody"[39m
+              [33mstyle[39m=[32m"background-image: url(HomeBG.jpg); background-position: center;"[39m
             [36m>[39m
               [36m<div[39m
-                [33mclass[39m=[32m"description"[39m
+                [33mclass[39m=[32m"content"[39m
               [36m>[39m
                 [36m<div[39m
-                  [33mclass[39m=[32m"picture"[39m
+                  [33mclass[39m=[32m"description"[39m
                 [36m>[39m
-                  [36m<img[39m
-                    [33malt[39m=[32m"a testing image"[39m
-                    [33msrc[39m=[32m"dudetesting.webp"[39m
-                    [33mstyle[39m=[32m"width: 200px; height: auto;"[39m
-                  [36m/>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"text"[39m
+                  [36m>[39m
+                    [36m<h3[39m
+                      [33mstyle[39m=[32m"color: rgb(255, 215, 0);"[39m
+                    [36m>[39m
+                      [0mDiscover Your Path with Our Career Quiz[0m
+                    [36m</h3>[39m
+                    [36m<p>[39m
+                      [0mWelcome to your first step toward finding a career that fits you! Our website offers two quiz options: the Basic Quiz for a quick look at potential career paths, and the Detailed Quiz for a more in-depth exploration of your interests and skills. Whether you're curious about new options or seeking to confirm your direction, these quizzes provide personalized insights to guide your future. Start discovering your path today![0m
+                    [36m</p>[39m
+                  [36m</div>[39m
                 [36m</div>[39m
                 [36m<div[39m
-                  [33mclass[39m=[32m"text"[39m
+                  [33mclass[39m=[32m"homeBasicQuestions"[39m
                 [36m>[39m
-                  [36m<h3>[39m
-                    [0mDiscover Your Path with Our Career Quiz[0m
-                  [36m</h3>[39m
+                  [36m<h4[39m
+                    [33mstyle[39m=[32m"margin-bottom: 20px; color: rgb(255, 215, 0);"[39m
+                  [36m>[39m
+                    [0mBasic Questions[0m
+                  [36m</h4>[39m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"homeBasicButton btn btn-primary"[39m
+                    [33mstyle[39m=[32m"border-radius: 5px; margin-bottom: 20px;"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [0mBASIC[0m
+                  [36m</button>[39m
                   [36m<p>[39m
-                    [0mWelcome to your first step toward finding a career that fits you! Our website offers two quiz options: the Basic Quiz for a quick look at potential career paths, and the Detailed Quiz for a more in-depth exploration of your interests and skills. Whether you're curious about new options or seeking to confirm your direction, these quizzes provide personalized insights to guide your future. Start discovering your path today![0m
+                    [0mA brief overview providing broad career suggestions based on key interests on a surface level[0m
                   [36m</p>[39m
                 [36m</div>[39m
-              [36m</div>[39m
-              [36m<div[39m
-                [33mclass[39m=[32m"homeBasicQuestions"[39m
-              [36m>[39m
-                [36m<h4[39m
-                  [33mstyle[39m=[32m"margin-bottom: 20px;"[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"homeDetailedQuestions"[39m
                 [36m>[39m
-                  [0mBasic Questions[0m
-                [36m</h4>[39m
-                [36m<button[39m
-                  [33mstyle[39m=[32m"border-radius: 5px; margin-bottom: 20px;"[39m
-                [36m>[39m
-                  [0mBASIC[0m
-                [36m</button>[39m
-                [36m<p>[39m
-                  [0mA brief overview providing broad career suggestions based on key interests on a surface level[0m
-                [36m</p>[39m
-              [36m</div>[39m
-              [36m<div[39m
-                [33mclass[39m=[32m"homeDetailedQuestions"[39m
-              [36m>[39m
-                [36m<h4[39m
-                  [33mstyle[39m=[32m"margin-bottom: 20px;"[39m
-                [36m>[39m
-                  [0mDetailed Questions[0m
-                [36m</h4>[39m
-                [36m<button[39m
-                  [33mstyle[39m=[32m"border-radius: 5px; margin-bottom: 20px;"[39m
-                [36m>[39m
-                  [0mDETAILED[0m
-                [36m</button>[39m
-                [36m<p>[39m
-                  [0mA thorough personalized career evaluation based on skills, interests, and values[0m
-                [36m</p>[39m
+                  [36m<h4[39m
+                    [33mstyle[39m=[32m"margin-bottom: 20px; color: rgb(255, 215, 0);"[39m
+                  [36m>[39m
+                    [0mDetailed Questions[0m
+                  [36m</h4>[39m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"homeDetailedButton btn btn-primary"[39m
+                    [33mstyle[39m=[32m"border-radius: 5px; margin-bottom: 20px;"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [0mDETAILED[0m
+                  [36m</button>[39m
+                  [36m<p>[39m
+                    [0mA thorough personalized career evaluation based on skills, interests, and values[0m
+                  [36m</p>[39m
+                [36m</div>[39m
               [36m</div>[39m
             [36m</div>[39m
             [36m<div[39m
@@ -164,19 +162,19 @@ All files               |    13.6 |     8.04 |    4.87 |   13.88 |
   index.tsx             |       0 |      100 |     100 |       0 | 7-19              
   reportWebVitals.ts    |       0 |        0 |       0 |       0 | 3-10              
  src/Home Page          |   47.05 |     37.5 |      20 |   47.05 |                   
-  HomePage.tsx          |   47.05 |     37.5 |      20 |   47.05 | 25,29-35,39,72    
+  HomePage.tsx          |   47.05 |     37.5 |      20 |   47.05 | 25,29-35,39,71    
  src/Logged In Page     |       0 |        0 |       0 |       0 |                   
   loggedPage.tsx        |       0 |        0 |       0 |       0 | 21-89             
  src/Progress Bar       |       0 |      100 |       0 |       0 |                   
   ProgressBar.tsx       |       0 |      100 |       0 |       0 | 6                 
  src/Question Pages     |       0 |        0 |       0 |       0 |                   
-  basicQuestions.tsx    |       0 |        0 |       0 |       0 | 14-83             
-  detailedQuestions.tsx |       0 |        0 |       0 |       0 | 14-155            
+  basicQuestions.tsx    |       0 |        0 |       0 |       0 | 15-85             
+  detailedQuestions.tsx |       0 |        0 |       0 |       0 | 15-157            
  src/Results Page       |    2.43 |        0 |       0 |    2.43 |                   
   Results.tsx           |    2.43 |        0 |       0 |    2.43 | 19-147            
 ------------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.362 s
+Time:        3.442 s
 Ran all test suites.
