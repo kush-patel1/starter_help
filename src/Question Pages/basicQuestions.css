@@ -2,17 +2,20 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    font-family: "ArcadeFont";
+    cursor: url('../Home Page/ArcadeCursor1.png') 12 12, auto;
+    width: 100vw;
+    height: 100vh;
   }
 
   .BasicQuestions-Header{
-    background-color: #f0229a;
+    background-color: #101023;
     min-height: 10vh;
     display: flex;
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: rgb(0, 0, 0);
+    color: #FFD700;
     position: fixed;
     width: 100%;
     padding: 0 1in;
@@ -29,7 +32,6 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: calc(5px + 3vmin);
     color: rgb(0, 0, 0);
     padding: 1in;
@@ -55,11 +57,16 @@
     text-align: center;
     width: 65%;
     height: 65%;
-    border: 3px solid black;
+    border: 3px solid rgba(255, 255, 255, 0.25); /* Light border for a polished look */
     border-radius: 15px;
-    background-color: #f0229a;
-    text: black;
+    background-color: rgba(59, 209, 255, 0.7); /* Semi-transparent background */
+    color: white;
+    opacity: 90%;
+    backdrop-filter: blur(10px); /* Adds the frosted glass effect */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    overflow: hidden; /* Ensures child elements don't spill over */
 }
+
 
   .BasicQuestions-getAnswersButton{
     align-self: flex-end;
@@ -67,10 +74,32 @@
     width: 180px;
     height: 70px;
     font-size: 20px;
+    background-color: #f03e3e; /* Red like the header */
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease;
   }
 
+  .BasicQuestions-getAnswersButton:hover{
+    background-color: #d92d2d; /* Slightly darker red on hover */
+    transform: scale(1.05); /* Grow effect on hover */
+  }
+
+.Home-Button{
+    background-color: #0f0fa6; /* Slightly lighter yellow */
+    color: #ffffff;
+    border-color: #0f0fa6;
+}
+.Home-Button:hover{
+    background-color: #FFF700; /* Slightly lighter yellow */
+    color: #000000;
+    box-shadow: 2px 2px 10px rgba(255, 255, 0, 0.8); /* Glow effect */
+    border-color: #FFF700;
+    animation: pulse 1.5s infinite;
+}
+
   .BasicQuestions-Footer {
-    background-color: #142d1f;
+    background-color: #101023;
     width: 100%;            
     position: fixed;        
     bottom: 0;               
@@ -79,9 +108,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: rgb(255, 255, 255);
-    padding: 10px;           
+    padding: 10px;          
+    color:#FFD700; 
 }
   
   .BasicQuestions-link {
@@ -110,6 +139,13 @@
     cursor: pointer;
     text-align: center;
     transition: background-color 0.3s;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+    color: #d92d2d;
+}
+.option-bar:hover {
+  background-color: #d92d2d; /* Hover effect for the option bars */
+  transform: scale(1.05); /* Slight scale effect */
+  color: white;
 }
 
 .option-bar.selected {

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import OpenAI from "openai";
 import "./Results.css";
-import loadingSymbol from "./LoadingSymbol.gif";
+import loadingSymbol from "./load.gif";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
 
@@ -188,7 +188,7 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
         </div>
       </div></p>:
       career2 ? <p><div className='Response'>{career2}</div></p> :
-      <img src={loadingSymbol} alt="Loading..." style={{marginTop:'10%', marginLeft: '30%'}}/>}
+      <img src={loadingSymbol} alt="Loading..." className="LoadingSymbol"/>}
     </div>
   );
 }

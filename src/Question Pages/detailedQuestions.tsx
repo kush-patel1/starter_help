@@ -1,5 +1,6 @@
 import React, { ChangeEvent, useState } from 'react';
 import './detailedQuestions.css';
+import BackgroundImage from "./DetailedBG.jpg";
 import { Button, Form } from 'react-bootstrap';
 import { ProgressBar } from '../Progress Bar/ProgressBar';
 
@@ -35,12 +36,13 @@ function DetailedQuestions({ homePage, resultsPage, handleSubmit, changeKey }: Q
     return (
         <div className='detailedQuestions'>
             <header className='DetailedQuestions-header'>
-                <h1>Detailed Questions Page</h1>
+                <h3>Detailed Questions Page</h3>
                 <ProgressBar progress={progress} />
                 <p className="detailedCheckmark">{progress === 100 ? "✔️" : ""}</p>
                 <Button className="Home-Button" onClick={homePage}> HOME </Button>
             </header>
-            <div className='DetailedQuestions-body'>
+            <div className='DetailedQuestions-body' style={{backgroundImage: `url(${BackgroundImage})`, backgroundPosition: "center", backgroundSize: "cover", // Ensures the image covers the entire background
+    backgroundRepeat: "no-repeat",}}>
                 {qCount === 0 && (
                     <div className="detailedFormat">
                         <p style={{paddingBottom: "6%", paddingLeft: "2%", paddingRight: "2%"}}>1. Do you prefer managing projects or executing tasks? Why?</p>
