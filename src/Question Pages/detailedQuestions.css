@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     font-family: "ArcadeFont";
-    cursor: url('/Users/kushpatel/Desktop/starter_help/src/Home Page/ArcadeCursor1.png') 12 12, auto;
+    cursor: url('../Home Page/ArcadeCursor1.png') 12 12, auto;
     width: 100vw;
     height: 100vh;
 }
