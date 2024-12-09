@@ -56,7 +56,7 @@ function HomePage({ basicQuestions, detailedQuestions, loggedPage, handleSubmit,
           <div className="popup">
             <div className="popup-content">
               <h2>Login</h2>
-              <label>Username:</label>
+              <label style={{color: "#ffffff"}}>Username:</label>
               <input
                 type="text"
                 value={username}
@@ -64,7 +64,7 @@ function HomePage({ basicQuestions, detailedQuestions, loggedPage, handleSubmit,
                 placeholder="Enter Username"
               />
               <p></p>
-              <label>Password:</label>
+              <label style={{color: "#ffffff"}}>Password:</label>
               <input
                 type="password"
                 value={password}
@@ -72,7 +72,7 @@ function HomePage({ basicQuestions, detailedQuestions, loggedPage, handleSubmit,
                 placeholder="Enter Password"
               />
               <p></p>
-              <button onClick={handleLogin} style={{backgroundColor: "#00FF00"}}>Login</button>
+              <button onClick={handleLogin} style={{backgroundColor: "#0f0fa6", color: "white"}}>Login</button>
               <button onClick={togglePopup} style={{backgroundColor: "#FF0000", color: "white"}}>Close</button>
             </div>
           </div>
