@@ -1,5 +1,6 @@
 import React, { ChangeEvent, useState } from 'react';
 import './basicQuestions.css';
+import BackgroundImage from "./BasicBG.jpg";
 import { Button, Form } from 'react-bootstrap';
 import { ProgressBar } from '../Progress Bar/ProgressBar';
 
@@ -48,12 +49,13 @@ function BasicQuestions({ homePage, resultsPage, handleSubmit, changeKey }: Ques
     return (
         <div className='BasicQuestions'>
             <header className="BasicQuestions-Header">
-                <h1>Basic Questions Page</h1>
+                <h3>Basic Questions Page</h3>
                 <ProgressBar progress={progress} />
                 <p className="basicCheckmark">{progress === 100 ? "✔️" : ""}</p>
                 <Button className="Home-Button" onClick={homePage}> HOME </Button>
             </header>
-            <div className='BasicQuestions-Body'>
+            <div className='BasicQuestions-Body' style={{backgroundImage: `url(${BackgroundImage})`, backgroundPosition: "center", backgroundSize: "cover", // Ensures the image covers the entire background
+    backgroundRepeat: "no-repeat",}}>
                 <div>
                     {qCount === 0 && (
                         <div className="basicFormat">
