@@ -30,7 +30,7 @@ function LoggedInPage({basicQuestions,detailedQuestions,handleSubmit,changeKey}:
         return(
         <div className="App">
             <div className="homeHeader">
-                <img src={LogoImage} alt="a logo image" style={{ width: "25%", height: "auto" }} />
+                <img src={LogoImage} alt="a logo" style={{ width: "25%", height: "auto" }} />
                 <Button className='homeLogoutButton' onClick={homeClick}>Log Out</Button>
             </div>
             <div className="homeBody" style={{backgroundImage: `url(${BackgroundImage})`, backgroundPosition: "center",}}>
