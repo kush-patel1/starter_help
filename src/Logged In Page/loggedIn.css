@@ -115,3 +115,16 @@ position: "fixed", width: "100%"}}*/
     position: relative;
     padding: 30px;
 }
+
+.homeLogoutButton{
+    background-color: #0f0fa6; /* Slightly lighter yellow */
+    color: #ffffff;
+    border-color: #0f0fa6;
+}
+.homeLogoutButton:hover{
+    background-color: #FFF700; /* Slightly lighter yellow */
+    color: #000000;
+    box-shadow: 2px 2px 10px rgba(255, 255, 0, 0.8); /* Glow effect */
+    border-color: #FFF700;
+    animation: pulse 1.5s infinite;
+}
