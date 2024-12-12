@@ -9,7 +9,7 @@
     position: fixed;
     width: 100%;
     top: 0;
-    height: 100px;
+    height: 100px; 
     z-index: 998;
     border-bottom: 5px solid #FFD700;
     animation: neon-flicker 1.5s infinite;
@@ -57,11 +57,13 @@
 .content {
     padding-bottom: 5%;
     padding-top:1.5%;
+    font-family: 'ArcadeFont';
+    color: white;
 }
 
 .homeBody{
     background-color: rgb(243, 234, 221);
-    max-height: 100%;
+    min-height: 70vw;
 }
 
 .homeHeaderText{
@@ -166,7 +168,7 @@
 .App {
     cursor: url('./ArcadeCursor1.png') 12 12, auto;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
 }
 
 .Submit-Button:hover {

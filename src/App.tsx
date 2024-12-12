@@ -54,7 +54,7 @@ function App() {
   }
 
   function loggedClick(){
-    setIfLogged(false);
+    setIfLogged(true);
   }
   
   
