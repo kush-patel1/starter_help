@@ -3,7 +3,7 @@
 > react-scripts test --coverage
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (46 ms)
+  ✕ renders learn react link (47 ms)
 
   ● renders learn react link
 
@@ -156,7 +156,7 @@ go away.[0m
 ------------------------|---------|----------|---------|---------|-------------------
 File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ------------------------|---------|----------|---------|---------|-------------------
-All files               |    13.6 |     8.04 |    4.87 |   13.88 |                   
+All files               |   13.33 |     7.86 |    4.76 |    13.6 |                   
  src                    |   26.82 |    22.22 |      10 |   26.82 |                   
   App.tsx               |   36.66 |    28.57 |    12.5 |   36.66 | 21,27-57,67-76    
   index.tsx             |       0 |      100 |     100 |       0 | 7-19              
@@ -164,11 +164,11 @@ All files               |    13.6 |     8.04 |    4.87 |   13.88 |
  src/Home Page          |   47.05 |     37.5 |      20 |   47.05 |                   
   HomePage.tsx          |   47.05 |     37.5 |      20 |   47.05 | 25,29-35,39,71    
  src/Logged In Page     |       0 |        0 |       0 |       0 |                   
-  loggedPage.tsx        |       0 |        0 |       0 |       0 | 21-89             
+  loggedPage.tsx        |       0 |        0 |       0 |       0 | 20-71             
  src/Progress Bar       |       0 |      100 |       0 |       0 |                   
   ProgressBar.tsx       |       0 |      100 |       0 |       0 | 6                 
  src/Question Pages     |       0 |        0 |       0 |       0 |                   
-  basicQuestions.tsx    |       0 |        0 |       0 |       0 | 15-85             
+  basicQuestions.tsx    |       0 |        0 |       0 |       0 | 15-92             
   detailedQuestions.tsx |       0 |        0 |       0 |       0 | 15-157            
  src/Results Page       |    2.43 |        0 |       0 |    2.43 |                   
   Results.tsx           |    2.43 |        0 |       0 |    2.43 | 19-147            
@@ -176,5 +176,5 @@ All files               |    13.6 |     8.04 |    4.87 |   13.88 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.442 s
+Time:        3.334 s
 Ran all test suites.
