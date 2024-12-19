@@ -40,7 +40,7 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
             6. Do you like to solve problems or follow instructions
             7. Would you rather work in an office or remotely?
             Here are the answers to each of the questions in order: ${basicAnswers.join(', ')}
-            For each suggestion, provide a link to a real website where the user can seek out the suggestion. Ensure the link is the only thing in parentheses and place it before the percentage match.`,
+            For each suggestion, provide a link to O*NET Online where it is doing a job search on the title of the job given. Use this link as an example (the job given was Project Manager) www.onetonline.org/find/quick?s=project+manager. Ensure the link is the only thing in parentheses and place it before the percentage match.`,
           },
         ],
         temperature: 1.25,
@@ -48,7 +48,7 @@ export const Results: React.FC<ResultsProps> = ({ homePage, detailedAnswers, bas
       const suggestions = completion.choices[0].message?.content || "No suggestions available.";
       setCareer1(suggestions.slice(0, suggestions.indexOf("@")).trim());
       setCareer2(suggestions.slice(suggestions.indexOf("@") + 2, suggestions.lastIndexOf("@")).trim());
-      setCareer3(suggestions.slice(suggestions.lastIndexOf("@") + 2).trim());
+      setCareer3(suggestions.slice(suggestions.lastIndexOf("@") + 2).trim()); 
     }
     else{
     const openai = new OpenAI({ apiKey: apiKey, dangerouslyAllowBrowser: true });
