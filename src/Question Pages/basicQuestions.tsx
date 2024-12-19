@@ -1,5 +1,6 @@
 import React, { ChangeEvent, useState } from 'react';
 import './basicQuestions.css';
+import BackgroundImage from "./BasicBG.jpg";
 import { Button, Form } from 'react-bootstrap';
 import { ProgressBar } from '../Progress Bar/ProgressBar';
 
@@ -30,6 +31,12 @@ function BasicQuestions({ homePage, resultsPage, handleSubmit, changeKey }: Ques
             setQCount(6);
         }
     }
+    function basicBack() {
+        setQCount(qCount - 1);
+        if (qCount < 1){
+            setQCount(1);
+        }
+    }
 
     function getResults() {
         resultsPage(undefined, basicAnswers);
@@ -48,85 +55,92 @@ function BasicQuestions({ homePage, resultsPage, handleSubmit, changeKey }: Ques
     return (
         <div className='BasicQuestions'>
             <header className="BasicQuestions-Header">
-                <h1>Basic Questions Page</h1>
+                <h3>Basic Questions Page</h3>
                 <ProgressBar progress={progress} />
                 <p className="basicCheckmark">{progress === 100 ? "✔️" : ""}</p>
                 <Button className="Home-Button" onClick={homePage}> HOME </Button>
             </header>
-            <div className='BasicQuestions-Body'>
+            <div className='BasicQuestions-Body' style={{backgroundImage: `url(${BackgroundImage})`, backgroundPosition: "center", backgroundSize: "cover", // Ensures the image covers the entire background
+    backgroundRepeat: "no-repeat",}}>
                 <div>
                     {qCount === 0 && (
                         <div className="basicFormat">
-                            <p style={{paddingBottom: "100px"}}>1. Do you prefer working indoors or outdoors?</p>
+                            <p style={{paddingBottom: "5%"}}>1. Do you prefer working indoors or outdoors?</p>
                             <div className="options-container">
                                 <OptionBar index={0} value="Indoors" text="Indoors" />
                                 <OptionBar index={0} value="Outdoors" text="Outdoors" />
+                                <Button onClick={basicNext} style={{marginTop:"2%"}}>Next</Button>
                             </div>
-                            <Button onClick={basicNext} disabled={!basicAnswers[0]} style={{marginTop: "130px"}}>Next</Button>
                         </div>
                     )}
                     {qCount === 1 && (
                         <div className="basicFormat">
-                            <p style={{paddingBottom: "100px"}}>2. Do you enjoy helping others?</p>
+                            <p style={{paddingBottom: "5%"}}>2. Do you enjoy helping others?</p>
                             <div className="options-container">
                                 <OptionBar index={1} value="Yes" text="Yes" />
                                 <OptionBar index={1} value="No" text="No" />
+                                <Button onClick={basicBack} style={{marginTop:"2%"}}>Back</Button>
+                                <Button onClick={basicNext} style={{marginTop:"2%"}}>Next</Button>
                             </div>
-                            <Button onClick={basicNext} disabled={!basicAnswers[1]} style={{marginTop: "130px"}}>Next</Button>
                         </div>
                     )}
                     {qCount === 2 && (
                         <div className="basicFormat">
-                            <p style={{paddingBottom: "10px"}}>3. On a scale of 1 to 5, how important is a high salary to you?</p>
-                            <div className="options-container">
+                            <p style={{paddingBottom: "3%"}}>3. On a scale of 1 to 5, how important is a high salary to you?</p>
+                            <div className="large-options-container">
                                 {[1, 2, 3, 4, 5].map(value => (
                                     <OptionBar key={value} index={2} value={String(value)} text={String(value)} />
                                 ))}
                             </div>
-                            <Button onClick={basicNext} disabled={!basicAnswers[2]} style={{marginTop: "10px"}}>Next</Button>
+                            <Button onClick={basicBack} style={{marginTop:"2%"}}>Back</Button>
+                            <Button onClick={basicNext} style={{marginTop:"2%"}}>Next</Button>
                         </div>
                     )}
                     {qCount === 3 && (
                         <div className="basicFormat">
-                            <p style={{paddingBottom: "100px"}}>4. Would you rather have a job that is routine or varied?</p>
+                            <p style={{paddingBottom: "5%"}}>4. Would you rather have a job that is routine or varied?</p>
                             <div className="options-container">
                                 <OptionBar index={3} value="Routine" text="Routine" />
                                 <OptionBar index={3} value="Varied" text="Varied" />
                             </div>
-                            <Button onClick={basicNext} disabled={!basicAnswers[3]} style={{marginTop: "130px"}}>Next</Button>
+                            <Button onClick={basicBack} style={{marginTop:"2%"}}>Back</Button>
+                            <Button onClick={basicNext} style={{marginTop:"2%"}}>Next</Button>
                         </div>
                     )}
                     {qCount === 4 && (
                         <div className="basicFormat">
-                            <p style={{paddingBottom: "100px"}}>5. Do you prefer working with your hands or technology?</p>
+                            <p style={{paddingBottom: "5%"}}>5. Do you prefer working with your hands or technology?</p>
                             <div className="options-container">
                                 <OptionBar index={4} value="Hands" text="Hands" />
                                 <OptionBar index={4} value="Technology" text="Technology" />
                             </div>
-                            <Button onClick={basicNext} disabled={!basicAnswers[4]} style={{marginTop: "130px"}}>Next</Button>
+                            <Button onClick={basicBack} style={{marginTop:"2%"}}>Back</Button>
+                            <Button onClick={basicNext} style={{marginTop:"2%"}}>Next</Button>
                         </div>
                     )}
                     {qCount === 5 && (
                         <div className="basicFormat">
-                            <p style={{paddingBottom: "100px"}}>6. Do you like to solve problems or follow instructions?</p>
+                            <p style={{paddingBottom: "5%"}}>6. Do you like to solve problems or follow instructions?</p>
                             <div className="options-container">
                                 <OptionBar index={5} value="Solving Problems" text="Solving Problems" />
                                 <OptionBar index={5} value="Following Instructions" text="Following Instructions" />
                             </div>
-                            <Button onClick={basicNext} disabled={!basicAnswers[5]} style={{marginTop: "130px"}}>Next</Button>
+                            <Button onClick={basicBack} style={{marginTop:"2%"}}>Back</Button>
+                            <Button onClick={basicNext} style={{marginTop:"2%"}}>Next</Button>
                         </div>
                     )}
                     {qCount === 6 && (
                         <div className="basicFormat">
-                            <p style={{paddingBottom: "100px"}}>7. Would you rather work in an office or remotely?</p>
+                            <p style={{paddingBottom: "5%"}}>7. Would you rather work in an office or remotely?</p>
                             <div className="options-container">
                                 <OptionBar index={6} value="Office" text="Office" />
                                 <OptionBar index={6} value="Remote" text="Remote" />
                             </div>
+                            <Button onClick={basicBack} style={{marginTop:"2%"}}>Back</Button>
+                            <Button className="BasicQuestions-getAnswersButton" onClick={getResults} disabled={progress !== 100} style={{marginTop:"2%"}}> Get Answers </Button>
                         </div>
                     )}
                 </div>
-                <Button className="BasicQuestions-getAnswersButton" onClick={getResults} disabled={progress !== 100} style={{marginTop: "550px"}}> Get Answers </Button>
             </div>
             <footer className='BasicQuestions-Footer'>
                 <Form>

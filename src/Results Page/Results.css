@@ -1,3 +1,18 @@
+.Results{
+  min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "ArcadeFont";
+    cursor: url('../Home Page/ArcadeCursor1.png') 12 12, auto;
+    width: 100vw;
+    height: 200vh;
+    background-color: black;
+    color: white;
+    background-image: url('./ResultsBG.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 .Results-header {
     background-color: #0036a2;
     min-height: 10vh;
@@ -6,22 +21,41 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    font-size: calc(10px + 2vmin);
     color: white;
   }
-  .Results-Header h1 {
-    font-weight:600;
-  }
  
+  .ResultName{
+    float: left;
+    padding-left: 30px;
+    padding-top: 30px;
+    color: #FFD700;
+  }
+
+  .Response{
+    padding-left: 30px;
+    float: left;
+    font-size: calc(10px + 2vmin);
+  }
+  
   .Container {
     display: flex;
     align-items: flex-start;
+    border: 3px solid rgba(255, 255, 255, 0.25); /* Light border for a polished look */
+    border-radius: 15px;
+    background-color: rgba(22, 21, 97, 0.7); /* Semi-transparent background */
+    color: rgb(255, 255, 255);
+    opacity: 90%;
+    backdrop-filter: blur(10px); /* Adds the frosted glass effect */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    overflow: hidden; /* Ensures child elements don't spill over */
+    margin: .5in;
   }
   
   .TextContainer {
     padding-left: 30px;
-    font-size: calc(10px + 2vmin);
+    font-size: 15px;
     flex: 1;
+    
   }
   
   .Pie {
@@ -40,4 +74,21 @@
     height: 200px;
     margin-left: 30px;
     padding-top: 30px;
+  }
+
+  .LoadingSymbol {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000; /* Ensures it's on top */
+    border: 3px solid rgba(255, 255, 255, 0.25); /* Light border for a polished look */
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255); /* Semi-transparent background */
+    opacity: 85%;
+    backdrop-filter: blur(10px); /* Adds the frosted glass effect */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    overflow: hidden; /* Ensures child elements don't spill over */
+    max-height: 200px;
+
   }
