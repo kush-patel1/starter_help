@@ -6,7 +6,7 @@ import { ProgressBar } from '../Progress Bar/ProgressBar';
 
 interface QuestionProps {
     homePage: () => void;
-    resultsPage: (basicAnswers?: any[], detailedAnswers?: any[]) => void;
+    resultsPage: (basicAnswers?: string[], detailedAnswers?: string[]) => void;
     handleSubmit: () => void;
     changeKey: (event: ChangeEvent<HTMLInputElement>) => void;
 }
