@@ -31,6 +31,12 @@ function BasicQuestions({ homePage, resultsPage, handleSubmit, changeKey }: Ques
             setQCount(6);
         }
     }
+    function basicBack() {
+        setQCount(qCount - 1);
+        if (qCount < 1){
+            setQCount(1);
+        }
+    }
 
     function getResults() {
         resultsPage(undefined, basicAnswers);
@@ -73,6 +79,7 @@ function BasicQuestions({ homePage, resultsPage, handleSubmit, changeKey }: Ques
                             <div className="options-container">
                                 <OptionBar index={1} value="Yes" text="Yes" />
                                 <OptionBar index={1} value="No" text="No" />
+                                <Button onClick={basicBack} style={{marginTop:"2%"}}>Back</Button>
                                 <Button onClick={basicNext} style={{marginTop:"2%"}}>Next</Button>
                             </div>
                         </div>
@@ -85,6 +92,7 @@ function BasicQuestions({ homePage, resultsPage, handleSubmit, changeKey }: Ques
                                     <OptionBar key={value} index={2} value={String(value)} text={String(value)} />
                                 ))}
                             </div>
+                            <Button onClick={basicBack} style={{marginTop:"2%"}}>Back</Button>
                             <Button onClick={basicNext} style={{marginTop:"2%"}}>Next</Button>
                         </div>
                     )}
@@ -95,6 +103,7 @@ function BasicQuestions({ homePage, resultsPage, handleSubmit, changeKey }: Ques
                                 <OptionBar index={3} value="Routine" text="Routine" />
                                 <OptionBar index={3} value="Varied" text="Varied" />
                             </div>
+                            <Button onClick={basicBack} style={{marginTop:"2%"}}>Back</Button>
                             <Button onClick={basicNext} style={{marginTop:"2%"}}>Next</Button>
                         </div>
                     )}
@@ -105,6 +114,7 @@ function BasicQuestions({ homePage, resultsPage, handleSubmit, changeKey }: Ques
                                 <OptionBar index={4} value="Hands" text="Hands" />
                                 <OptionBar index={4} value="Technology" text="Technology" />
                             </div>
+                            <Button onClick={basicBack} style={{marginTop:"2%"}}>Back</Button>
                             <Button onClick={basicNext} style={{marginTop:"2%"}}>Next</Button>
                         </div>
                     )}
@@ -115,6 +125,7 @@ function BasicQuestions({ homePage, resultsPage, handleSubmit, changeKey }: Ques
                                 <OptionBar index={5} value="Solving Problems" text="Solving Problems" />
                                 <OptionBar index={5} value="Following Instructions" text="Following Instructions" />
                             </div>
+                            <Button onClick={basicBack} style={{marginTop:"2%"}}>Back</Button>
                             <Button onClick={basicNext} style={{marginTop:"2%"}}>Next</Button>
                         </div>
                     )}
@@ -125,6 +136,7 @@ function BasicQuestions({ homePage, resultsPage, handleSubmit, changeKey }: Ques
                                 <OptionBar index={6} value="Office" text="Office" />
                                 <OptionBar index={6} value="Remote" text="Remote" />
                             </div>
+                            <Button onClick={basicBack} style={{marginTop:"2%"}}>Back</Button>
                             <Button className="BasicQuestions-getAnswersButton" onClick={getResults} disabled={progress !== 100} style={{marginTop:"2%"}}> Get Answers </Button>
                         </div>
                     )}
